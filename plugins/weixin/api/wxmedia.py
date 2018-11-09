@@ -10,6 +10,7 @@ from log import logger
 from plugins.weixin.api.wxaccount import refresh_access_token
 from plugins.weixin.models.wxmedia import wxmedias
 from models import row2dict, rows2dict, bind_dict, change_dict
+from services.media.image import ImageService
 from sqlalchemy.sql import select
 
 IGNORES = {'created_date', 'last_modifed'}
@@ -126,6 +127,25 @@ def sync_all_wxmedias():
         db.close()
     except Exception:
         logger.exception('<sync_all_wxusers> error: ')
+
+
+def sync_all_wxmeida_images():
+    try:
+        db.connect()
+        account = refresh_access_token(db, 1)
+        if account is not None:
+            imageservice = ImageService(db)
+            folder = imageservice.find_folder('weixin', 'images')
+            if folder is not None:
+                t = wxmedias.alias('m')
+                query = select([t.c.id, t.c.name, t.c.url])
+                query.where(t.c.account_id == 1)
+                rows = db.execute(query).fetchall()
+                for r in rows:
+                    imageservice.save_image(folder, r[1], r[2])
+        db.close()
+    except Exception:
+        logger.exception('<sync_all_wxmeida_images> error: ')
 
 
 def sync_wxmedias(db, account, media_ids_dict, media_type, offset, count):

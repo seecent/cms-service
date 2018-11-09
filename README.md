@@ -1,5 +1,5 @@
-# Leads管理系统后台服务
-Leads管理系统后台服务
+# CMS管理系统后台服务
+CMS管理系统后台服务
 
 1. 安装依赖文件 pip install -r requirements.txt
 
@@ -21,4 +21,3 @@ Leads管理系统后台服务
 4.5 进入help_doc/build/html查看生成的html帮助文档
 
 5. 生产环境使用gunicorn部署，运行命令：gunicorn -c gunicorn.conf app:__hug_wsgi__ & 
-# cms-service

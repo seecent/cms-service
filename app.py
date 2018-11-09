@@ -174,7 +174,8 @@ def sync_wxusers():
 
 @hug.cli()
 def sync_wxmedias():
-    wxmedia.sync_all_wxmedias()
+    # wxmedia.sync_all_wxmedias()
+    wxmedia.sync_all_wxmeida_images()
 
 
 @hug.cli()
