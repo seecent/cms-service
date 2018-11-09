@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--数据导入配置模板-->
+<RawLeads name="rawleads" table="lms_raw_leads" label="销售线索" validate="true" merge="false">
+    <!--去重主键设置-->
+    <Separator sep="," />
+	<!--去重时间范围设置, 对多少天内数据去重，如果不设置默认对30天内数据去重主键去重-->
+	<UniqueDateRange days="60" />
+    <!--去重主键设置-->
+    <UniqueKeys>
+		<UniqueKey name="mobile_phone" mapping="MobilePhone"/>
+		<UniqueKey name="campaign_id" mapping="CampaignCode"/>
+	</UniqueKeys>
+    <!--导入数据主表字段配置-->
+	<Columns>
+		<Column name="name" mapping="Name" type="String" label="线索名称"/>
+		<Column name="contact_id" type="BigInteger" component="rawcontacts" joinColumn="id" nullable="false"/>
+		<Column name="campaign_id" type="BigInteger" joinTable="campaigns" joinColumn="id"/>
+		<!--客户类型 0:新客, 1:老客  -->
+		<Column name="customer_type" mapping="CustomerType" type="Integer" label="客户类型" validate="Enum" enums="0:新客,1:老客"/>
+		<!--可以将多个导入字段映射到一个数据库字段，值将采用json格式存储-->
+		<Column name="customer_json" mapping="ECIFID" type="String" label="客户ECIF编号"/>
+		<Column name="customer_json" mapping="TotalPolicy" type="Integer" label="购买过的保单数量"/>
+		<Column name="customer_json" mapping="SumPremium" type="Integer" label="保单的累计保费"/>
+		<Column name="agentcode" mapping="AgentCode" type="String" label="分配营销员代码"/>
+		<!--只能有一个导入字段定义为Json类型，且只能放在最后一列-->
+		<Column name="family_json" mapping="Family_JSON" type="Json" label="家属的信息" nullable="false"/>
+	</Columns>
+	<!--导入数据子表字段配置，子表记录和主表记录一一对应-->
+	<Components>
+		<Contact name="rawcontacts" table="lms_raw_contacts" label="联系人">
+		    <Column name="city_code" mapping="CityCode" type="String" label="活动城市邮政编码"/>
+			<Column name="city_name" mapping="CityName" type="String" label="活动城市"/>
+			<Column name="full_name" mapping="FullName" type="String" label="全名"/>
+			<Column name="id_type" mapping="IDType" type="Integer" label="证件类型"/>
+			<Column name="id_number" mapping="IDNumber" type="String" label="证件号码"/>
+			<!--性别 0:未知, 1:男性, 2:女性 参照中保信规范  -->
+			<Column name="gender" mapping="Gender" type="Integer" label="性别" validate="Enum" enums="0:未知,1:男性,2:女性"/>
+			<Column name="birth_date" mapping="BirthDate" type="String" label="生日"/>
+			<Column name="birth_year" mapping="BirthYear" type="Integer" label="生日年"/>
+			<Column name="birth_month" mapping="BirthMonth" type="Integer" label="生日月"/>
+			<Column name="birth_day" mapping="BirthDay" type="Integer" label="生日日"/>
+			<Column name="mobile_phone" mapping="MobilePhone" type="String" label="手机号码" nullable="false" validate="MobilePhone"/>
+		</Contact>
+	</Components>
+	<!--导入数据关联表字段配置，关联表数据会根据unique="true"字段去重，重复数据不会入库-->
+    <JoinTables>
+		<Campaign name="campaigns" table="lms_campaigns" label="营销活动">
+			<Column name="code" mapping="CampaignCode" type="String" unique="true" label="营销活动编码"/>
+			<Column name="name" mapping="CampaignName" type="String" label="营销活动名称"/>
+		</Campaign>
+    </JoinTables>
+</RawLeads>

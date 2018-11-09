@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--数据导入配置模板-->
+<RawLeads name="rawleads" table="lms_raw_leads" label="销售线索" validate="true" merge="false">
+    <!--去重主键设置-->
+    <UniqueKeys>
+		<UniqueKey name="mobile_phone" mapping="MobilePhone"/>
+		<UniqueKey name="channel_id" mapping="SalesChannelCode"/>
+		<UniqueKey name="campaign_id" mapping="CampaignCode"/>
+	</UniqueKeys>
+    <!--导入数据主表字段配置-->
+	<Columns>
+	    <!--数据库字段配置, name: 数据库字段名称, mapping: 导入数据映射字段，type：数据类型, label: 字段说明-->
+		<!--unique: 是否唯一，设置为true，将按照该字段值去除重复记录-->
+		<!--nullable: 是否不能为空，设置为true，该字段值为空时不会入库-->
+		<!--length: 长度限制-->
+		<!--format: 日期时间DateTime类型字段，日期时间格式化表达式-->
+		<!--transform: 转换，枚举值转换，例如：M:0,F:1-->
+		<!--enums: 枚举值，配合validate="Enum"使用进行枚举值校验-->
+		<!--validate: 校验，设置validate属性值将对字段值进行校验，校验不通过将不入库。Enum：枚举值校验，PhoneNumber：校验手机号码，Email：校验电子邮箱地址。还支持正则表达式校验。-->
+		<Column name="name" mapping="Name" type="String" label="线索名称" unique="true" nullable="true"/>
+		<Column name="budget" mapping="Budget" type="Integer" label="预算"/>
+		<Column name="need" mapping="Need" type="String" label="需求"/>
+		<Column name="authority" mapping="Authority" type="String" label="授权人"/>
+		<Column name="time_frame" mapping="TimeFrame" type="String" label="时间计划"/>
+		<Column name="premiun" mapping="Premiun" type="Integer" label="保费"/>
+		<Column name="last_modifed" mapping="LastModifed" type="DateTime" length="19" label="修改时间" format="%Y-%m-%d %H:%M:%S"/>
+		<Column name="contact_id" type="BigInteger" component="rawcontacts" joinColumn="id"/>
+		<Column name="channel_id" type="BigInteger" joinTable="saleschannels" joinColumn="id"/>
+		<Column name="campaign_id" type="BigInteger" joinTable="campaigns" joinColumn="id"/>
+		<Column name="company_id" type="BigInteger" joinTable="companies" joinColumn="id"/>
+		<Column name="product_id" type="BigInteger" joinTable="products" joinColumn="id"/>
+	</Columns>
+	<!--导入数据子表字段配置，子表记录和主表记录一一对应-->
+	<Components>
+		<Contact name="rawcontacts" table="lms_raw_contacts" label="联系人">
+			<Column name="en_name" mapping="EnName" type="String" label="英文名"/>
+			<Column name="first_name" mapping="FirstName" type="String" label="姓名"/>
+			<Column name="last_name" mapping="LastName" type="String" label="姓氏"/>
+			<Column name="full_name" mapping="FullName" type="String" label="全名"/>
+			<!--证件类型 1：省份证，2：军人证，3：护照，4：户口本，5：外国人永久居留证-->
+			<Column name="id_type" mapping="IDType" type="Integer" label="证件类型" validate="Enum" enums="1:省份证,2:军人证,3:护照,4:户口本,5:外国人永久居留证"/>
+			<Column name="id_number" mapping="IDNumber" type="String" label="证件号码"/>
+			<!--性别 M: 男性，F: 女性-->
+			<Column name="gender" mapping="Gender" type="Integer" label="性别" transform="M:0,F:1" validate="Enum" enums="M:男性,F:女性"/>
+			<Column name="age" mapping="Age" type="Integer" label="年龄"/>
+			<Column name="birth_year" mapping="BirthYear" type="String" label="出生年"/>
+			<Column name="birth_month" mapping="BirthMonth" type="String" label="出生月"/>
+			<Column name="birth_day" mapping="BirthDay" type="String" label="生日"/>
+			<!--婚姻状态 0：未婚，1：已婚-->
+			<Column name="marriage" mapping="Marriage" type="Integer" label="婚姻状态" validate="Enum" enums="0:未婚,1:已婚"/>
+			<Column name="num_of_childs" mapping="NumOfChilds" type="Integer" label="孩子数量"/>
+			<!--受教育程度 1：小学，2：初中，3：高中，4：大专，5：本科，6：研究生，7：博士及以上-->
+			<Column name="education" mapping="Education" type="Integer" label="受教育程度" validate="Enum" enums="1:小学,2:初中,3:高中,4:大专,5:本科,6:研究生,7:博士及以上"/>
+			<Column name="income" mapping="Income" type="Integer" label="年收入"/>
+			<Column name="job_title" mapping="JobTitle" type="String" label="职位"/>
+			<Column name="vip_flag" mapping="VipFlag" type="Integer" label="VIP标识"/>
+			<Column name="mobile_phone" mapping="MobilePhone" type="String" label="手机号码" validate="PhoneNumber"/>
+			<Column name="home_phone" mapping="HomePhone" type="String" label="家庭电话" validate="PhoneNumber"/>
+			<Column name="work_phone" mapping="WorkPhone" type="String" label="工作电话" validate="PhoneNumber"/>
+			<Column name="email" mapping="Email" type="String" label="电子邮箱" validate="Email"/>
+			<Column name="qq" mapping="QQ" type="String" label="QQ"/>
+			<Column name="weixin" mapping="Weixin" type="String" label="微信"/>
+			<Column name="open_id" mapping="OpenID" type="String" label="OpenID"/>
+			<Column name="ip_address" mapping="IPAddress" type="String" label="IP地址"/>
+			<Column name="province_code" mapping="ProvinceCode" type="String" label="省份编码"/>
+			<Column name="city_code" mapping="CityCode" type="String" label="地市编码"/>
+			<Column name="district_code" mapping="DistrictCode" type="String" label="区县编码"/>
+			<Column name="address" mapping="Address" type="String" label="地址"/>
+		</Contact>
+	</Components>
+	<!--导入数据关联表字段配置，关联表数据会根据unique="true"字段去重，重复数据不会入库-->
+    <JoinTables>
+		<SalesChannel name="saleschannels" table="lms_sales_channels" label="销售渠道"> 
+			<Column name="code" mapping="Code" type="String" unique="true" label="销售渠道编码"/>
+			<Column name="name" mapping="Name" type="String" label="销售渠道名称"/>
+		</SalesChannel>
+		<Campaign name="campaigns" table="lms_campaigns" label="营销活动">
+			<Column name="code" mapping="Code" type="String" unique="true" label="营销活动编码"/>
+			<Column name="name" mapping="Name" type="String" label="营销活动名称"/>
+		</Campaign>
+		<Company name="companies" table="lms_companies" label="公司">
+			<Column name="code" mapping="Code" type="String" unique="true" label="公司编码"/>
+			<Column name="name" mapping="Name" type="String" label="公司名称"/>
+		</Company>
+		<Product name="products" table="lms_products" label="产品">
+			<Column name="code" mapping="Code" type="String" unique="true" label="产品编码"/>
+			<Column name="name" mapping="Name" type="String" label="产品名称"/>
+		</Product>
+  </JoinTables>
+</RawLeads>

@@ -1,0 +1,1 @@
+FOR /r %%f IN (__pycache__) DO RD /s/q "%%f"

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--数据导入配置模板-->
+<AmsCSO name="amscsos" table="AMS_AMSCSO" label="公司信息" validate="true" merge="false">
+    <!--去重主键设置-->
+    <UniqueKeys>
+		<UniqueKey name="comCode" mapping="comCode"/>
+	</UniqueKeys>
+    <!--导入数据主表字段配置-->
+	<Columns>
+	    <!--数据库字段配置, name: 数据库字段名称, mapping: 导入数据映射字段，type：数据类型, label: 字段说明-->
+		<!--unique: 是否唯一，设置为true，将按照该字段值去除重复记录-->
+		<!--nullable: 是否不能为空，设置为true，该字段值为空时不会入库-->
+		<!--length: 长度限制-->
+		<!--format: 日期时间DateTime类型字段，日期时间格式化表达式-->
+		<!--transform: 转换，枚举值转换，例如：M:0,F:1-->
+		<!--enums: 枚举值，配合validate="Enum"使用进行枚举值校验-->
+		<!--validate: 校验，设置validate属性值将对字段值进行校验，校验不通过将不入库。Enum：枚举值校验，PhoneNumber：校验手机号码，Email：校验电子邮箱地址。还支持正则表达式校验。-->
+		<Column name="comCode" mapping="comCode" type="String" unique="true" nullable="false" label="公司编码"/>
+		<Column name="comName" mapping="comName" type="String" label="公司名称"/>
+		<Column name="comShortName" mapping="comShortName" type="String" label="简称"/>
+		<Column name="phone" mapping="phone" type="String" label="电话" validate="PhoneNumber"/>
+		<Column name="zipCode" mapping="zipCode" type="String" label="邮编"/>
+		<Column name="fax" mapping="fax" type="String" label="传真" validate="PhoneNumber"/>
+		<Column name="proviceNo" mapping="proviceNo" type="String" label="省份编码"/>
+		<Column name="cityNo" mapping="cityNo" type="String" label="地市编码"/>
+		<Column name="address" mapping="address" type="String" label="地址"/>
+		<Column name="datime" mapping="datime" type="DateTime" length="10" label="修改时间" format="%Y-%m-%d"/>
+	</Columns>
+</AmsCSO>

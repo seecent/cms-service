@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ActiveLeads name="activeleads" table="activeleads">
+    <Columns>
+        <Column name="lead_seqId" mapping="id" type="BigInteger"/>
+        <Column name="lead_name" mapping="name" type="String"/>
+        <Column name="createTime" mapping="last_modifed" type="DateTime"/>
+        <Column name="endTime" mapping="last_modifed" type="DateTime"/>
+        <Column name="lead_details" mapping="name" type="String"/>
+        <Column name="lead_campaign_code" mapping="campaign_code" type="String"/>
+        <Column name="lead_timeFrame" mapping="time_frame" type="String"/>
+        <Column name="unica_offer_product_code" mapping="product_code" type="String"/>
+        <Column name="unica_offer_product_name" mapping="product_name" type="String"/>
+        <Column name="unica_offer_resolution_code" mapping="product_code" type="String"/>
+        <Column name="unica_offer_resolution_name" mapping="product_name" type="String"/>
+        <Column name="unica_campaignCode" mapping="campaign_code" type="String"/>
+        <Column name="unica_campaignName" mapping="campaign_name" type="String"/>
+        <Column name="mdb_mobilePhone" mapping="mobile_phone" type="String"/>
+        <Column name="mdb_customerId" mapping="contact_id" type="BigInteger"/>
+        <Column name="mdb_companyCode" mapping="company_code" type="String"/>
+        <Column name="mdb_name" mapping="full_name" type="String"/>
+        <Column name="mdb_birthDate" mapping="birth_day" type="String"/>
+        <Column name="mdb_sex" mapping="gender" type="String"/>
+        <Column name="mdb_certType" mapping="id_type" type="Integer"/>
+        <Column name="mdb_certNo" mapping="id_number" type="String"/>
+        <Column name="mdb_province" mapping="province_code" type="String"/>
+        <Column name="mdb_provinceName" mapping="province_name" type="String"/>
+        <Column name="mdb_city" mapping="city_code" type="String"/>
+        <Column name="mdb_cityName" mapping="city_name" type="String"/>
+        <Column name="mdb_marriagestatus" mapping="marriage" type="String"/>
+        <Column name="mdb_childNum" mapping="num_of_childs" type="String"/>
+    </Columns>
+</ActiveLeads>

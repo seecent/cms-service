@@ -1,0 +1,9 @@
+hug>=2.3.2
+cryptography>=2.0.3
+alembic>=0.9.6
+multimethod>=0.7.1
+psycopg2>=2.7.3
+hashids>=1.2.0
+Cython>=0.28.1
+pycryptodome>=3.6.1
+# pymssql>=2.1.3

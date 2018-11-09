@@ -1,0 +1,12 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# __pycache__
+__pycache__
+*/__pycache__
+*/*__pycache__
+# logs
+logs
+# migrations
+migrations/version
+/config.py
+

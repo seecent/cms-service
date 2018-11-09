@@ -1,0 +1,582 @@
+"ID_JOB","CHANNEL_ID","JOBNAME","STATUS","LINES_READ","LINES_WRITTEN","LINES_UPDATED","LINES_INPUT","LINES_OUTPUT","LINES_REJECTED","ERRORS","STARTDATE","ENDDATE","LOGDATE","DEPDATE","REPLAYDATE","LOG_FIELD","EXECUTING_SERVER","EXECUTING_USER","START_JOB_ENTRY","CLIENT"
+"0","08834768-4b31-4dac-a676-a30951bb7321","营销员信息表","stop","0","0","0","0","0","0","0","1900/1/1 07:00:00","2018/6/21 12:09:14","2018/6/21 12:17:55","2018/6/21 12:09:14","2018/6/21 12:09:14","2018/06/21 12:09:14 - 营销员信息表 - 开始执行任务
+2018/06/21 12:09:14 - 营销员信息表 - 营销员信息表
+2018/06/21 12:10:14 - 营销员信息表 - 开始项[作业]
+2018/06/21 12:10:14 - 作业 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Log filename is empty or not specified!
+2018/06/21 12:10:14 - 营销员信息表 - 完成作业项[作业] (结果=[false])
+2018/06/21 12:10:14 - 营销员信息表 - 营销员信息表
+2018/06/21 12:16:33 - Spoon - Spoon
+2018/06/21 12:16:43 - Spoon - Spoon
+2018/06/21 12:17:05 - Spoon - Spoon
+2018/06/21 12:17:48 - Spoon - Spoon
+2018/06/21 12:17:55 - 营销员信息表 - 任务执行完毕
+2018/06/21 12:17:55 - Spoon - 任务已经结束.
+
+STOP
+","JKTE089K4G6V3K8","Administrator","","SPOON"
+"1","0cbc80af-aa4d-4938-8d7b-8e6cc87d59c5","营销员信息表","end","0","0","0","0","0","0","1","1900/1/1 07:00:00","2018/6/21 12:19:56","2018/6/21 12:19:56","2018/6/21 12:19:56","2018/6/21 12:19:56","2018/06/21 12:19:56 - Spoon - 正在开始任务...
+2018/06/21 12:19:56 - 营销员信息表 - 开始执行任务
+2018/06/21 12:19:56 - 营销员信息表 - 开始项[作业]
+2018/06/21 12:19:56 - 作业 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Error running job entry 'job' : 
+2018/06/21 12:19:56 - 作业 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleException: 
+2018/06/21 12:19:56 - 作业 - 检测到无限循环:作业里的一个作业项调用了自己.文件名是[D:\dev\kettle\营销员信息表.kjb]
+2018/06/21 12:19:56 - 作业 - 
+2018/06/21 12:19:56 - 作业 - 	at org.pentaho.di.job.entries.job.JobEntryJob.verifyRecursiveExecution(JobEntryJob.java:1165)
+2018/06/21 12:19:56 - 作业 - 	at org.pentaho.di.job.entries.job.JobEntryJob.execute(JobEntryJob.java:628)
+2018/06/21 12:19:56 - 作业 - 	at org.pentaho.di.job.Job.execute(Job.java:724)
+2018/06/21 12:19:56 - 作业 - 	at org.pentaho.di.job.Job.execute(Job.java:865)
+2018/06/21 12:19:56 - 作业 - 	at org.pentaho.di.job.Job.execute(Job.java:546)
+2018/06/21 12:19:56 - 作业 - 	at org.pentaho.di.job.Job.run(Job.java:436)
+2018/06/21 12:19:56 - 营销员信息表 - 完成作业项[作业] (结果=[false])
+2018/06/21 12:19:56 - 营销员信息表 - 任务执行完毕
+2018/06/21 12:19:56 - Spoon - 任务已经结束.
+
+END
+","JKTE089K4G6V3K8","Administrator","START","SPOON"
+"2","56b456d3-82c5-49e9-8662-5960b71c6880","营销员信息表","end","0","0","0","0","0","0","0","1900/1/1 07:00:00","2018/6/21 12:20:58","2018/6/21 12:20:58","2018/6/21 12:20:58","2018/6/21 12:20:58","2018/06/21 12:20:58 - Spoon - 正在开始任务...
+2018/06/21 12:20:58 - 营销员信息表 - 开始执行任务
+2018/06/21 12:20:58 - 营销员信息表 - 开始项[转换]
+2018/06/21 12:20:58 - 转换 - Loading transformation from XML file [D:\dev\kettle\导入营销员信息.ktr]
+2018/06/21 12:20:58 - 导入营销员信息 - 为了转换解除补丁开始  [导入营销员信息]
+2018/06/21 12:20:58 - 表输出.0 - Connected to database [mylmsdb] (commit=1000)
+2018/06/21 12:20:58 - 表输入.0 - Finished reading query, closing connection.
+2018/06/21 12:20:58 - 表输入.0 - 完成处理 (I=332, O=0, R=0, W=332, U=0, E=0)
+2018/06/21 12:20:58 - 表输出.0 - 完成处理 (I=0, O=332, R=332, W=332, U=0, E=0)
+2018/06/21 12:20:58 - 营销员信息表 - 开始项[成功]
+2018/06/21 12:20:58 - 营销员信息表 - 完成作业项[成功] (结果=[true])
+2018/06/21 12:20:58 - 营销员信息表 - 完成作业项[转换] (结果=[true])
+2018/06/21 12:20:58 - 营销员信息表 - 任务执行完毕
+2018/06/21 12:20:58 - Spoon - 任务已经结束.
+
+END
+","JKTE089K4G6V3K8","Administrator","","SPOON"
+"3","1c0e3bc0-bcb9-430e-a750-0bb69898f4a8","LMS导入销售员信息","end","0","0","0","0","0","0","1","1900/1/1 07:00:00","2018/6/21 13:12:23","2018/6/21 13:12:24","2018/6/21 13:12:23","2018/6/21 13:12:23","2018/06/21 13:03:46 - Spoon - Connected to metastore : kettlelmsdb, added to delegating metastore
+2018/06/21 13:03:46 - RepositoriesMeta - Reading repositories XML file: C:\Users\Administrator\.kettle\repositories.xml
+2018/06/21 13:03:46 - RepositoriesMeta - Reading repositories XML file: C:\Users\Administrator\.kettle\repositories.xml
+2018/06/21 13:06:20 - RepositoriesMeta - Reading repositories XML file: C:\Users\Administrator\.kettle\repositories.xml
+2018/06/21 13:08:45 - Spoon - Spoon
+2018/06/21 13:09:25 - Spoon - Spoon
+2018/06/21 13:09:30 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected error setting internal filename variables!
+2018/06/21 13:09:30 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleFileException: 
+2018/06/21 13:09:30 - General - 
+2018/06/21 13:09:30 - General - Unable to get VFS File object for filename '//LMS导入销售人员.ktr' : Could not find file with URI ""\\LMS导入销售人员.ktr"" because it is a relative path, and no base URI was provided.
+2018/06/21 13:09:30 - General - 
+2018/06/21 13:09:30 - General - 
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:159)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:106)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.trans.TransMeta.setInternalFilenameKettleVariables(TransMeta.java:5618)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.base.AbstractMeta.setFilename(AbstractMeta.java:340)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.job.entries.trans.JobEntryTransDialog.pickFileVFS(JobEntryTransDialog.java:1320)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.job.entries.trans.JobEntryTransDialog$20.widgetSelected(JobEntryTransDialog.java:1088)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.job.entries.trans.JobEntryTransDialog.open(JobEntryTransDialog.java:1149)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.delegates.SpoonJobDelegate.editJobEntry(SpoonJobDelegate.java:261)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.editJobEntry(Spoon.java:8622)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.job.JobGraph.editEntry(JobGraph.java:2894)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.job.JobGraph.mouseDoubleClick(JobGraph.java:638)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1359)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7990)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9290)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:685)
+2018/06/21 13:09:30 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018/06/21 13:09:30 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018/06/21 13:09:30 - General - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018/06/21 13:09:30 - General - 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018/06/21 13:09:30 - General - 	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+2018/06/21 13:09:30 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected error setting internal filename variables!
+2018/06/21 13:09:30 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleFileException: 
+2018/06/21 13:09:30 - General - 
+2018/06/21 13:09:30 - General - Unable to get VFS File object for filename '//LMS导入销售人员.ktr' : Could not find file with URI ""\\LMS导入销售人员.ktr"" because it is a relative path, and no base URI was provided.
+2018/06/21 13:09:30 - General - 
+2018/06/21 13:09:30 - General - 
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:159)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:106)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.trans.TransMeta.setInternalFilenameKettleVariables(TransMeta.java:5618)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.trans.TransMeta.setInternalKettleVariables(TransMeta.java:5555)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.base.AbstractMeta.setInternalKettleVariables(AbstractMeta.java:389)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.base.AbstractMeta.setRepositoryDirectory(AbstractMeta.java:361)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToRepository(Spoon.java:5142)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToRepository(Spoon.java:5113)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToFile(Spoon.java:5078)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveFile(Spoon.java:5026)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.job.entries.trans.JobEntryTransDialog.pickFileVFS(JobEntryTransDialog.java:1324)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.job.entries.trans.JobEntryTransDialog$20.widgetSelected(JobEntryTransDialog.java:1088)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.job.entries.trans.JobEntryTransDialog.open(JobEntryTransDialog.java:1149)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.delegates.SpoonJobDelegate.editJobEntry(SpoonJobDelegate.java:261)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.editJobEntry(Spoon.java:8622)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.job.JobGraph.editEntry(JobGraph.java:2894)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.job.JobGraph.mouseDoubleClick(JobGraph.java:638)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1359)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7990)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9290)
+2018/06/21 13:09:30 - General - 	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:685)
+2018/06/21 13:09:30 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018/06/21 13:09:30 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018/06/21 13:09:30 - General - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018/06/21 13:09:30 - General - 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018/06/21 13:09:30 - General - 	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+2018/06/21 13:10:54 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected error setting internal filename variables!
+2018/06/21 13:10:54 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleFileException: 
+2018/06/21 13:10:54 - General - 
+2018/06/21 13:10:54 - General - Unable to get VFS File object for filename '//LMS导入销售人员.ktr' : Could not find file with URI ""\\LMS导入销售人员.ktr"" because it is a relative path, and no base URI was provided.
+2018/06/21 13:10:54 - General - 
+2018/06/21 13:10:54 - General - 
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:159)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:106)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.trans.TransMeta.setInternalFilenameKettleVariables(TransMeta.java:5618)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.trans.TransMeta.setInternalKettleVariables(TransMeta.java:5555)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.base.AbstractMeta.setInternalKettleVariables(AbstractMeta.java:389)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.base.AbstractMeta.setRepositoryDirectory(AbstractMeta.java:361)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToRepository(Spoon.java:5142)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToRepository(Spoon.java:5113)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToFile(Spoon.java:5078)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveFile(Spoon.java:5026)
+2018/06/21 13:10:54 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018/06/21 13:10:54 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018/06/21 13:10:54 - General - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018/06/21 13:10:54 - General - 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018/06/21 13:10:54 - General - 	at org.pentaho.ui.xul.impl.AbstractXulDomContainer.invoke(AbstractXulDomContainer.java:313)
+2018/06/21 13:10:54 - General - 	at org.pentaho.ui.xul.impl.AbstractXulComponent.invoke(AbstractXulComponent.java:157)
+2018/06/21 13:10:54 - General - 	at org.pentaho.ui.xul.impl.AbstractXulComponent.invoke(AbstractXulComponent.java:141)
+2018/06/21 13:10:54 - General - 	at org.pentaho.ui.xul.swt.tags.SwtToolbarbutton.access$100(SwtToolbarbutton.java:48)
+2018/06/21 13:10:54 - General - 	at org.pentaho.ui.xul.swt.tags.SwtToolbarbutton$1.widgetSelected(SwtToolbarbutton.java:96)
+2018/06/21 13:10:54 - General - 	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+2018/06/21 13:10:54 - General - 	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+2018/06/21 13:10:54 - General - 	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+2018/06/21 13:10:54 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:10:54 - General - 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+2018/06/21 13:10:54 - General - 	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1359)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7990)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9290)
+2018/06/21 13:10:54 - General - 	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:685)
+2018/06/21 13:10:54 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018/06/21 13:10:54 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018/06/21 13:10:54 - General - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018/06/21 13:10:54 - General - 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018/06/21 13:10:54 - General - 	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+2018/06/21 13:10:59 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected error setting internal filename variables!
+2018/06/21 13:10:59 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleFileException: 
+2018/06/21 13:10:59 - General - 
+2018/06/21 13:10:59 - General - Unable to get VFS File object for filename '//LMS导入销售人员.ktr' : Could not find file with URI ""\\LMS导入销售人员.ktr"" because it is a relative path, and no base URI was provided.
+2018/06/21 13:10:59 - General - 
+2018/06/21 13:10:59 - General - 
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:159)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:106)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.trans.TransMeta.setInternalFilenameKettleVariables(TransMeta.java:5618)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.trans.TransMeta.setInternalKettleVariables(TransMeta.java:5555)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.base.AbstractMeta.setInternalKettleVariables(AbstractMeta.java:389)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.ui.spoon.delegates.SpoonTabsDelegate.tabSelected(SpoonTabsDelegate.java:465)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.ui.spoon.Spoon.tabSelected(Spoon.java:3325)
+2018/06/21 13:10:59 - General - 	at org.pentaho.xul.swt.tab.TabSet.notifySelectListeners(TabSet.java:105)
+2018/06/21 13:10:59 - General - 	at org.pentaho.xul.swt.tab.TabSet.widgetSelected(TabSet.java:69)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.custom.CTabFolder.setSelection(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.custom.CTabFolder.onMouse(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.custom.CTabFolder$1.handleEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1359)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7990)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9290)
+2018/06/21 13:10:59 - General - 	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:685)
+2018/06/21 13:10:59 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018/06/21 13:10:59 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018/06/21 13:10:59 - General - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018/06/21 13:10:59 - General - 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018/06/21 13:10:59 - General - 	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+2018/06/21 13:12:17 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected error setting internal filename variables!
+2018/06/21 13:12:17 - General - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleFileException: 
+2018/06/21 13:12:17 - General - 
+2018/06/21 13:12:17 - General - Unable to get VFS File object for filename '//LMS导入销售人员.ktr' : Could not find file with URI ""\\LMS导入销售人员.ktr"" because it is a relative path, and no base URI was provided.
+2018/06/21 13:12:17 - General - 
+2018/06/21 13:12:17 - General - 
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:159)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.core.vfs.KettleVFS.getFileObject(KettleVFS.java:106)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.trans.TransMeta.setInternalFilenameKettleVariables(TransMeta.java:5618)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.trans.TransMeta.setInternalKettleVariables(TransMeta.java:5555)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.base.AbstractMeta.setInternalKettleVariables(AbstractMeta.java:389)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.base.AbstractMeta.setRepositoryDirectory(AbstractMeta.java:361)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToRepository(Spoon.java:5142)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToRepository(Spoon.java:5113)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveToFile(Spoon.java:5078)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.ui.spoon.Spoon.saveFile(Spoon.java:5026)
+2018/06/21 13:12:17 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018/06/21 13:12:17 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018/06/21 13:12:17 - General - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018/06/21 13:12:17 - General - 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018/06/21 13:12:17 - General - 	at org.pentaho.ui.xul.impl.AbstractXulDomContainer.invoke(AbstractXulDomContainer.java:313)
+2018/06/21 13:12:17 - General - 	at org.pentaho.ui.xul.impl.AbstractXulComponent.invoke(AbstractXulComponent.java:157)
+2018/06/21 13:12:17 - General - 	at org.pentaho.ui.xul.impl.AbstractXulComponent.invoke(AbstractXulComponent.java:141)
+2018/06/21 13:12:17 - General - 	at org.pentaho.ui.xul.swt.tags.SwtToolbarbutton.access$100(SwtToolbarbutton.java:48)
+2018/06/21 13:12:17 - General - 	at org.pentaho.ui.xul.swt.tags.SwtToolbarbutton$1.widgetSelected(SwtToolbarbutton.java:96)
+2018/06/21 13:12:17 - General - 	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+2018/06/21 13:12:17 - General - 	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+2018/06/21 13:12:17 - General - 	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+2018/06/21 13:12:17 - General - 	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+2018/06/21 13:12:17 - General - 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+2018/06/21 13:12:17 - General - 	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1359)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7990)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9290)
+2018/06/21 13:12:17 - General - 	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:685)
+2018/06/21 13:12:17 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018/06/21 13:12:17 - General - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018/06/21 13:12:17 - General - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018/06/21 13:12:17 - General - 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018/06/21 13:12:17 - General - 	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+2018/06/21 13:12:20 - kettlelmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : 一个数据库错误发生在从资源库文件读取转换时
+2018/06/21 13:12:20 - kettlelmsdb - org.pentaho.di.core.exception.KettleException: 
+2018/06/21 13:12:20 - kettlelmsdb - 这个转换不存在 : LMS导入销售人员.ktr
+2018/06/21 13:12:23 - Spoon - 正在开始任务...
+2018/06/21 13:12:23 - LMS导入销售员信息 - 开始执行任务
+2018/06/21 13:12:23 - LMS导入销售员信息 - 开始项[LMS导入销售人员]
+2018/06/21 13:12:23 - kettlelmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : 一个数据库错误发生在从资源库文件读取转换时
+2018/06/21 13:12:23 - kettlelmsdb - org.pentaho.di.core.exception.KettleException: 
+2018/06/21 13:12:23 - kettlelmsdb - 这个转换不存在 : LMS导入销售人员.ktr
+2018/06/21 13:12:23 - LMS导入销售人员 - 为了转换解除补丁开始  [LMS导入销售人员]
+2018/06/21 13:12:23 - 表输出.0 - Connected to database [mylmsdb] (commit=1000)
+2018/06/21 13:12:23 - 表输入.0 - Finished reading query, closing connection.
+2018/06/21 13:12:23 - 表输入.0 - 完成处理 (I=332, O=0, R=0, W=332, U=0, E=0)
+2018/06/21 13:12:24 - 表输出.0 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected batch update error committing the database connection.
+2018/06/21 13:12:24 - 表输出.0 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseBatchException: 
+2018/06/21 13:12:24 - 表输出.0 - Error updating batch
+2018/06/21 13:12:24 - 表输出.0 - Duplicate entry '60014715' for key 'PRIMARY'
+2018/06/21 13:12:24 - 表输出.0 - 
+2018/06/21 13:12:24 - 表输出.0 - 	at org.pentaho.di.core.database.Database.createKettleDatabaseBatchException(Database.java:1427)
+2018/06/21 13:12:24 - 表输出.0 - 	at org.pentaho.di.core.database.Database.emptyAndCommit(Database.java:1416)
+2018/06/21 13:12:24 - 表输出.0 - 	at org.pentaho.di.trans.steps.tableoutput.TableOutput.dispose(TableOutput.java:586)
+2018/06/21 13:12:24 - 表输出.0 - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:96)
+2018/06/21 13:12:24 - 表输出.0 - 	at java.lang.Thread.run(Thread.java:745)
+2018/06/21 13:12:24 - 表输出.0 - Caused by: java.sql.BatchUpdateException: Duplicate entry '60014715' for key 'PRIMARY'
+2018/06/21 13:12:24 - 表输出.0 - 	at com.mysql.jdbc.ServerPreparedStatement.executeBatchSerially(ServerPreparedStatement.java:826)
+2018/06/21 13:12:24 - 表输出.0 - 	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+2018/06/21 13:12:24 - 表输出.0 - 	at org.pentaho.di.core.database.Database.emptyAndCommit(Database.java:1403)
+2018/06/21 13:12:24 - 表输出.0 - 	... 3 more
+2018/06/21 13:12:24 - LMS导入销售人员 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : 错误被检测到!
+2018/06/21 13:12:24 - 表输出.0 - 完成处理 (I=0, O=0, R=332, W=0, U=0, E=1)
+2018/06/21 13:12:24 - mylmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unable to write log record to log table [lms_kettle_step_logs]
+2018/06/21 13:12:24 - mylmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseException: 
+2018/06/21 13:12:24 - mylmsdb - Error inserting/updating row
+2018/06/21 13:12:24 - mylmsdb - Table 'lmsdb.lms_kettle_step_logs' doesn't exist
+2018/06/21 13:12:24 - mylmsdb - 
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1321)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1245)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1233)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1221)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1184)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.writeLogRecord(Database.java:3357)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.Trans.writeStepLogInformation(Trans.java:2459)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.Trans$9.transFinished(Trans.java:2317)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.Trans.fireTransFinishedListeners(Trans.java:1472)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.Trans$1.stepFinished(Trans.java:1224)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.step.BaseStep.markStop(BaseStep.java:3035)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:121)
+2018/06/21 13:12:24 - mylmsdb - 	at java.lang.Thread.run(Thread.java:745)
+2018/06/21 13:12:24 - mylmsdb - Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'lmsdb.lms_kettle_step_logs' doesn't exist
+2018/06/21 13:12:24 - mylmsdb - 	at sun.reflect.GeneratedConstructorAccessor81.newInstance(Unknown Source)
+2018/06/21 13:12:24 - mylmsdb - 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2018/06/21 13:12:24 - mylmsdb - 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2375)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2359)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1288)
+2018/06/21 13:12:24 - mylmsdb - 	... 12 more
+2018/06/21 13:12:24 - mylmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unable to write log record to log table [lms_kettle_step_logs]
+2018/06/21 13:12:24 - mylmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseException: 
+2018/06/21 13:12:24 - mylmsdb - Error inserting/updating row
+2018/06/21 13:12:24 - mylmsdb - Table 'lmsdb.lms_kettle_step_logs' doesn't exist
+2018/06/21 13:12:24 - mylmsdb - 
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1321)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1245)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1233)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1221)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1184)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.writeLogRecord(Database.java:3357)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.Trans.writeStepLogInformation(Trans.java:2459)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.Trans$9.transFinished(Trans.java:2317)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.Trans.fireTransFinishedListeners(Trans.java:1472)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.Trans$1.stepFinished(Trans.java:1224)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.step.BaseStep.markStop(BaseStep.java:3035)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:121)
+2018/06/21 13:12:24 - mylmsdb - 	at java.lang.Thread.run(Thread.java:745)
+2018/06/21 13:12:24 - mylmsdb - Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'lmsdb.lms_kettle_step_logs' doesn't exist
+2018/06/21 13:12:24 - mylmsdb - 	at sun.reflect.GeneratedConstructorAccessor81.newInstance(Unknown Source)
+2018/06/21 13:12:24 - mylmsdb - 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2018/06/21 13:12:24 - mylmsdb - 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2375)
+2018/06/21 13:12:24 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2359)
+2018/06/21 13:12:24 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1288)
+2018/06/21 13:12:24 - mylmsdb - 	... 12 more
+2018/06/21 13:12:24 - LMS导入销售人员 - 转换被检测 
+2018/06/21 13:12:24 - LMS导入销售人员 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : 错误被检测到!
+2018/06/21 13:12:24 - LMS导入销售人员 - 转换正在杀死其他步骤!
+2018/06/21 13:12:24 - LMS导入销售员信息 - 完成作业项[LMS导入销售人员] (结果=[false])
+2018/06/21 13:12:24 - LMS导入销售员信息 - 任务执行完毕
+2018/06/21 13:12:24 - Spoon - 任务已经结束.
+
+END
+","JKTE089K4G6V3K8","admin","","SPOON"
+"4","4f5f81b2-1e32-4d74-971c-2e18baec5609","LMS导入销售员信息","end","0","0","0","0","0","0","1","1900/1/1 07:00:00","2018/6/21 13:16:42","2018/6/21 13:16:42","2018/6/21 13:16:42","2018/6/21 13:16:42","2018/06/21 13:16:42 - Spoon - 正在开始任务...
+2018/06/21 13:16:42 - LMS导入销售员信息 - 开始执行任务
+2018/06/21 13:16:42 - LMS导入销售员信息 - 开始项[LMS导入销售人员]
+2018/06/21 13:16:42 - LMS导入销售人员 - Loading transformation from repository [LMS导入销售人员] in directory [/]
+2018/06/21 13:16:42 - LMS导入销售人员 - 为了转换解除补丁开始  [LMS导入销售人员]
+2018/06/21 13:16:42 - 表输出.0 - Connected to database [mylmsdb] (commit=1000)
+2018/06/21 13:16:42 - 表输入.0 - Finished reading query, closing connection.
+2018/06/21 13:16:42 - 表输入.0 - 完成处理 (I=332, O=0, R=0, W=332, U=0, E=0)
+2018/06/21 13:16:42 - 表输出.0 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected batch update error committing the database connection.
+2018/06/21 13:16:42 - 表输出.0 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseBatchException: 
+2018/06/21 13:16:42 - 表输出.0 - Error updating batch
+2018/06/21 13:16:42 - 表输出.0 - Duplicate entry '60014715' for key 'PRIMARY'
+2018/06/21 13:16:42 - 表输出.0 - 
+2018/06/21 13:16:42 - 表输出.0 - 	at org.pentaho.di.core.database.Database.createKettleDatabaseBatchException(Database.java:1427)
+2018/06/21 13:16:42 - 表输出.0 - 	at org.pentaho.di.core.database.Database.emptyAndCommit(Database.java:1416)
+2018/06/21 13:16:42 - 表输出.0 - 	at org.pentaho.di.trans.steps.tableoutput.TableOutput.dispose(TableOutput.java:586)
+2018/06/21 13:16:42 - 表输出.0 - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:96)
+2018/06/21 13:16:42 - 表输出.0 - 	at java.lang.Thread.run(Thread.java:745)
+2018/06/21 13:16:42 - 表输出.0 - Caused by: java.sql.BatchUpdateException: Duplicate entry '60014715' for key 'PRIMARY'
+2018/06/21 13:16:42 - 表输出.0 - 	at com.mysql.jdbc.ServerPreparedStatement.executeBatchSerially(ServerPreparedStatement.java:826)
+2018/06/21 13:16:42 - 表输出.0 - 	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+2018/06/21 13:16:42 - 表输出.0 - 	at org.pentaho.di.core.database.Database.emptyAndCommit(Database.java:1403)
+2018/06/21 13:16:42 - 表输出.0 - 	... 3 more
+2018/06/21 13:16:42 - 表输出.0 - 完成处理 (I=0, O=0, R=332, W=0, U=0, E=1)
+2018/06/21 13:16:42 - mylmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unable to write log record to log table [lms_kettle_step_logs]
+2018/06/21 13:16:42 - mylmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseException: 
+2018/06/21 13:16:42 - mylmsdb - Error inserting/updating row
+2018/06/21 13:16:42 - mylmsdb - Table 'lmsdb.lms_kettle_step_logs' doesn't exist
+2018/06/21 13:16:42 - mylmsdb - 
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1321)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1245)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1233)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1221)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1184)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.writeLogRecord(Database.java:3357)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.Trans.writeStepLogInformation(Trans.java:2459)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.Trans$9.transFinished(Trans.java:2317)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.Trans.fireTransFinishedListeners(Trans.java:1472)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.Trans$1.stepFinished(Trans.java:1224)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.step.BaseStep.markStop(BaseStep.java:3035)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:121)
+2018/06/21 13:16:42 - mylmsdb - 	at java.lang.Thread.run(Thread.java:745)
+2018/06/21 13:16:42 - mylmsdb - Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'lmsdb.lms_kettle_step_logs' doesn't exist
+2018/06/21 13:16:42 - mylmsdb - 	at sun.reflect.GeneratedConstructorAccessor81.newInstance(Unknown Source)
+2018/06/21 13:16:42 - mylmsdb - 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2018/06/21 13:16:42 - mylmsdb - 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2375)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2359)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1288)
+2018/06/21 13:16:42 - mylmsdb - 	... 12 more
+2018/06/21 13:16:42 - mylmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unable to write log record to log table [lms_kettle_step_logs]
+2018/06/21 13:16:42 - mylmsdb - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseException: 
+2018/06/21 13:16:42 - mylmsdb - Error inserting/updating row
+2018/06/21 13:16:42 - mylmsdb - Table 'lmsdb.lms_kettle_step_logs' doesn't exist
+2018/06/21 13:16:42 - mylmsdb - 
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1321)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1245)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1233)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1221)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1184)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.writeLogRecord(Database.java:3357)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.Trans.writeStepLogInformation(Trans.java:2459)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.Trans$9.transFinished(Trans.java:2317)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.Trans.fireTransFinishedListeners(Trans.java:1472)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.Trans$1.stepFinished(Trans.java:1224)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.step.BaseStep.markStop(BaseStep.java:3035)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:121)
+2018/06/21 13:16:42 - mylmsdb - 	at java.lang.Thread.run(Thread.java:745)
+2018/06/21 13:16:42 - mylmsdb - Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'lmsdb.lms_kettle_step_logs' doesn't exist
+2018/06/21 13:16:42 - mylmsdb - 	at sun.reflect.GeneratedConstructorAccessor81.newInstance(Unknown Source)
+2018/06/21 13:16:42 - mylmsdb - 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2018/06/21 13:16:42 - mylmsdb - 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2375)
+2018/06/21 13:16:42 - mylmsdb - 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2359)
+2018/06/21 13:16:42 - mylmsdb - 	at org.pentaho.di.core.database.Database.insertRow(Database.java:1288)
+2018/06/21 13:16:42 - mylmsdb - 	... 12 more
+2018/06/21 13:16:42 - LMS导入销售人员 - 转换被检测 
+2018/06/21 13:16:42 - LMS导入销售人员 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : 错误被检测到!
+2018/06/21 13:16:42 - LMS导入销售人员 - 转换正在杀死其他步骤!
+2018/06/21 13:16:42 - LMS导入销售员信息 - 完成作业项[LMS导入销售人员] (结果=[false])
+2018/06/21 13:16:42 - LMS导入销售员信息 - 任务执行完毕
+2018/06/21 13:16:42 - Spoon - 任务已经结束.
+
+END
+","JKTE089K4G6V3K8","admin","","SPOON"
+"5","ef1f8c99-2375-4852-900e-f442006a4602","LMS导入销售员信息","end","0","0","0","0","0","0","1","1900/1/1 07:00:00","2018/6/21 13:17:37","2018/6/21 13:17:38","2018/6/21 13:17:37","2018/6/21 13:17:37","2018/06/21 13:17:37 - Spoon - 正在开始任务...
+2018/06/21 13:17:37 - LMS导入销售员信息 - 开始执行任务
+2018/06/21 13:17:37 - LMS导入销售员信息 - 开始项[LMS导入销售人员]
+2018/06/21 13:17:37 - LMS导入销售人员 - Loading transformation from repository [LMS导入销售人员] in directory [/]
+2018/06/21 13:17:38 - LMS导入销售人员 - 为了转换解除补丁开始  [LMS导入销售人员]
+2018/06/21 13:17:38 - 表输出.0 - Connected to database [mylmsdb] (commit=1000)
+2018/06/21 13:17:38 - 表输入.0 - Finished reading query, closing connection.
+2018/06/21 13:17:38 - 表输入.0 - 完成处理 (I=332, O=0, R=0, W=332, U=0, E=0)
+2018/06/21 13:17:38 - 表输出.0 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected batch update error committing the database connection.
+2018/06/21 13:17:38 - 表输出.0 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseBatchException: 
+2018/06/21 13:17:38 - 表输出.0 - Error updating batch
+2018/06/21 13:17:38 - 表输出.0 - Duplicate entry '60014715' for key 'PRIMARY'
+2018/06/21 13:17:38 - 表输出.0 - 
+2018/06/21 13:17:38 - 表输出.0 - 	at org.pentaho.di.core.database.Database.createKettleDatabaseBatchException(Database.java:1427)
+2018/06/21 13:17:38 - 表输出.0 - 	at org.pentaho.di.core.database.Database.emptyAndCommit(Database.java:1416)
+2018/06/21 13:17:38 - 表输出.0 - 	at org.pentaho.di.trans.steps.tableoutput.TableOutput.dispose(TableOutput.java:586)
+2018/06/21 13:17:38 - 表输出.0 - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:96)
+2018/06/21 13:17:38 - 表输出.0 - 	at java.lang.Thread.run(Thread.java:745)
+2018/06/21 13:17:38 - 表输出.0 - Caused by: java.sql.BatchUpdateException: Duplicate entry '60014715' for key 'PRIMARY'
+2018/06/21 13:17:38 - 表输出.0 - 	at com.mysql.jdbc.ServerPreparedStatement.executeBatchSerially(ServerPreparedStatement.java:826)
+2018/06/21 13:17:38 - 表输出.0 - 	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+2018/06/21 13:17:38 - 表输出.0 - 	at org.pentaho.di.core.database.Database.emptyAndCommit(Database.java:1403)
+2018/06/21 13:17:38 - 表输出.0 - 	... 3 more
+2018/06/21 13:17:38 - 表输出.0 - 完成处理 (I=0, O=0, R=332, W=0, U=0, E=1)
+2018/06/21 13:17:38 - LMS导入销售人员 - 转换被检测 
+2018/06/21 13:17:38 - LMS导入销售人员 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : 错误被检测到!
+2018/06/21 13:17:38 - LMS导入销售人员 - 转换正在杀死其他步骤!
+2018/06/21 13:17:38 - LMS导入销售员信息 - 完成作业项[LMS导入销售人员] (结果=[false])
+2018/06/21 13:17:38 - LMS导入销售员信息 - 任务执行完毕
+2018/06/21 13:17:38 - Spoon - 任务已经结束.
+
+END
+","JKTE089K4G6V3K8","admin","","SPOON"
+"6","79d42d0d-b2c1-42c9-988f-dea944c500aa","LMS导入销售员信息","end","0","0","0","0","0","0","0","1900/1/1 07:00:00","2018/6/21 13:18:00","2018/6/21 13:18:01","2018/6/21 13:18:00","2018/6/21 13:18:00","2018/06/21 13:18:00 - Spoon - 正在开始任务...
+2018/06/21 13:18:00 - LMS导入销售员信息 - 开始执行任务
+2018/06/21 13:18:00 - LMS导入销售员信息 - 开始项[LMS导入销售人员]
+2018/06/21 13:18:00 - LMS导入销售人员 - Loading transformation from repository [LMS导入销售人员] in directory [/]
+2018/06/21 13:18:00 - LMS导入销售人员 - 为了转换解除补丁开始  [LMS导入销售人员]
+2018/06/21 13:18:01 - 表输出.0 - Connected to database [mylmsdb] (commit=1000)
+2018/06/21 13:18:01 - 表输入.0 - Finished reading query, closing connection.
+2018/06/21 13:18:01 - 表输入.0 - 完成处理 (I=332, O=0, R=0, W=332, U=0, E=0)
+2018/06/21 13:18:01 - 表输出.0 - 完成处理 (I=0, O=332, R=332, W=332, U=0, E=0)
+2018/06/21 13:18:01 - LMS导入销售员信息 - 开始项[成功]
+2018/06/21 13:18:01 - LMS导入销售员信息 - 完成作业项[成功] (结果=[true])
+2018/06/21 13:18:01 - LMS导入销售员信息 - 完成作业项[LMS导入销售人员] (结果=[true])
+2018/06/21 13:18:01 - LMS导入销售员信息 - 任务执行完毕
+2018/06/21 13:18:01 - Spoon - 任务已经结束.
+
+END
+","JKTE089K4G6V3K8","admin","","SPOON"
+"7","b739d0f4-8bc5-4759-9261-193a18a369e3","LMS导入销售员信息","end","0","0","0","0","0","0","1","2018/6/21 13:18:00","2018/6/21 13:45:19","2018/6/21 13:45:19","2018/6/21 13:45:19","2018/6/21 13:45:19","2018/06/21 13:45:19 - Spoon - 正在开始任务...
+2018/06/21 13:45:19 - LMS导入销售员信息 - 开始执行任务
+2018/06/21 13:45:19 - LMS导入销售员信息 - 开始项[LMS导入销售人员]
+2018/06/21 13:45:19 - LMS导入销售人员 - Loading transformation from repository [LMS导入销售人员] in directory [/]
+2018/06/21 13:45:19 - LMS导入销售人员 - 为了转换解除补丁开始  [LMS导入销售人员]
+2018/06/21 13:45:19 - 表输出.0 - Connected to database [mylmsdb] (commit=1000)
+2018/06/21 13:45:19 - 表输入.0 - Finished reading query, closing connection.
+2018/06/21 13:45:19 - 表输入.0 - 完成处理 (I=332, O=0, R=0, W=332, U=0, E=0)
+2018/06/21 13:45:19 - 表输出.0 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Unexpected batch update error committing the database connection.
+2018/06/21 13:45:19 - 表输出.0 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : org.pentaho.di.core.exception.KettleDatabaseBatchException: 
+2018/06/21 13:45:19 - 表输出.0 - Error updating batch
+2018/06/21 13:45:19 - 表输出.0 - Duplicate entry '60014715' for key 'PRIMARY'
+2018/06/21 13:45:19 - 表输出.0 - 
+2018/06/21 13:45:19 - 表输出.0 - 	at org.pentaho.di.core.database.Database.createKettleDatabaseBatchException(Database.java:1427)
+2018/06/21 13:45:19 - 表输出.0 - 	at org.pentaho.di.core.database.Database.emptyAndCommit(Database.java:1416)
+2018/06/21 13:45:19 - 表输出.0 - 	at org.pentaho.di.trans.steps.tableoutput.TableOutput.dispose(TableOutput.java:586)
+2018/06/21 13:45:19 - 表输出.0 - 	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:96)
+2018/06/21 13:45:19 - 表输出.0 - 	at java.lang.Thread.run(Thread.java:745)
+2018/06/21 13:45:19 - 表输出.0 - Caused by: java.sql.BatchUpdateException: Duplicate entry '60014715' for key 'PRIMARY'
+2018/06/21 13:45:19 - 表输出.0 - 	at com.mysql.jdbc.ServerPreparedStatement.executeBatchSerially(ServerPreparedStatement.java:826)
+2018/06/21 13:45:19 - 表输出.0 - 	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+2018/06/21 13:45:19 - 表输出.0 - 	at org.pentaho.di.core.database.Database.emptyAndCommit(Database.java:1403)
+2018/06/21 13:45:19 - 表输出.0 - 	... 3 more
+2018/06/21 13:45:19 - 表输出.0 - 完成处理 (I=0, O=0, R=332, W=0, U=0, E=1)
+2018/06/21 13:45:19 - LMS导入销售人员 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : 错误被检测到!
+2018/06/21 13:45:19 - LMS导入销售人员 - 转换被检测 
+2018/06/21 13:45:19 - LMS导入销售人员 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : 错误被检测到!
+2018/06/21 13:45:19 - LMS导入销售人员 - 转换正在杀死其他步骤!
+2018/06/21 13:45:19 - LMS导入销售员信息 - 完成作业项[LMS导入销售人员] (结果=[false])
+2018/06/21 13:45:19 - LMS导入销售员信息 - 任务执行完毕
+2018/06/21 13:45:19 - Spoon - 任务已经结束.
+
+END
+","JKTE089K4G6V3K8","admin","","SPOON"
+"8","6723c9b5-191c-4e80-86ce-8260dd1cf9bc","LMS导入销售员信息","end","0","0","0","0","0","0","0","2018/6/21 13:18:00","2018/6/21 13:53:28","2018/6/21 13:53:29","2018/6/21 13:53:28","2018/6/21 13:53:28","2018/06/21 13:52:18 - org.pentaho.di.ui.spoon.SpoonPerspectiveManager@35293c05 - ERROR (version 7.0.0.0-25, build 1 from 2016-11-05 15.35.36 by buildguy) : Perspective with schedulerPerspective is not found.
+2018/06/21 13:52:18 - RepositoriesMeta - Reading repositories XML file: C:\Users\Administrator\.kettle\repositories.xml
+2018/06/21 13:52:31 - RepositoriesMeta - Reading repositories XML file: C:\Users\Administrator\.kettle\repositories.xml
+2018/06/21 13:52:40 - Spoon - Connected to metastore : kettlelmsdb, added to delegating metastore
+2018/06/21 13:52:40 - RepositoriesMeta - Reading repositories XML file: C:\Users\Administrator\.kettle\repositories.xml
+2018/06/21 13:52:40 - RepositoriesMeta - Reading repositories XML file: C:\Users\Administrator\.kettle\repositories.xml
+2018/06/21 13:53:28 - Spoon - 正在开始任务...
+2018/06/21 13:53:28 - LMS导入销售员信息 - 开始执行任务
+2018/06/21 13:53:28 - LMS导入销售员信息 - 开始项[LMS导入销售人员]
+2018/06/21 13:53:28 - LMS导入销售人员 - Loading transformation from repository [LMS导入销售人员] in directory [/]
+2018/06/21 13:53:28 - LMS导入销售人员 - 为了转换解除补丁开始  [LMS导入销售人员]
+2018/06/21 13:53:28 - 表输出.0 - Connected to database [mylmsdb] (commit=1000)
+2018/06/21 13:53:28 - 表输入.0 - Finished reading query, closing connection.
+2018/06/21 13:53:28 - 表输入.0 - 完成处理 (I=332, O=0, R=0, W=332, U=0, E=0)
+2018/06/21 13:53:29 - 表输出.0 - 完成处理 (I=0, O=332, R=332, W=332, U=0, E=0)
+2018/06/21 13:53:29 - LMS导入销售员信息 - 开始项[成功]
+2018/06/21 13:53:29 - LMS导入销售员信息 - 完成作业项[成功] (结果=[true])
+2018/06/21 13:53:29 - LMS导入销售员信息 - 完成作业项[LMS导入销售人员] (结果=[true])
+2018/06/21 13:53:29 - LMS导入销售员信息 - 任务执行完毕
+2018/06/21 13:53:29 - Spoon - 任务已经结束.
+
+END
+","JKTE089K4G6V3K8","admin","","SPOON"
