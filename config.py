@@ -16,8 +16,10 @@ true_values = {1, '1', 'True', 'true', 't', 'y', 'yes'}
 _default = {
     "cms_home": "D:\\dev\\github\\seecent\\cms-service\\",  # cms-service 主目录
     "upload": "D:\\dev\\github\\seecent\\upload\\",         # 上传文件保存目录
-    "media_root": "D:\\dev\\github\\seecent\\media",      # 素材文件保存目录
+    "media_root": "D:\\dev\\github\\seecent\\media",        # 素材文件保存目录
     "media_url": "http://localhost/media/",                 # 素材访问根URL
+    "page_root": "D:\\dev\\github\\seecent\\pages",         # 页面文件保存目录
+    "page_url": "http://localhost/pages/",                  # 页面访问根URL
     "sqlalchemy.url": "postgresql://lms:lms_line@localhost/cmsdb",
     "secret_key": "sc62ko&m&3g*rx8r3j2pinf6ae1%#=m5#g&hho2mu_tea-#&us",
     "ams_api_sign_key": "TqhjhdGA639o6OAT",
@@ -48,6 +50,8 @@ setting = {
     "cms_home": get_env("cms_home"),
     "media_root": get_env("media_root"),
     "media_url": get_env("media_url"),
+    "page_root": get_env("page_root"),
+    "page_url": get_env("page_url"),
     "upload": get_env("upload"),
     "sqlalchemy.url": get_env("sqlalchemy.url"),
     "secret_key": get_env("secret_key"),

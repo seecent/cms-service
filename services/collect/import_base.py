@@ -66,7 +66,7 @@ class CollectImportBase:
                 result = {'code': ErrorCode.EXCEPTION.value,
                           'message': msg}
         except Exception as e:
-            logger.exception('<insert_main_table_datas> error=')
+            logger.exception('<insert_main_table_datas> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
         return result
 
@@ -103,7 +103,7 @@ class CollectImportBase:
                 msg = 'not table: ' + table_name
                 result = {'code': ErrorCode.EXCEPTION.value, 'message': msg}
         except Exception as e:
-            logger.exception('<insert_components_datas> error=')
+            logger.exception('<insert_components_datas> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
         return result
 
@@ -147,7 +147,7 @@ class CollectImportBase:
                 msg = 'not table: ' + table_name
                 result = {'code': ErrorCode.EXCEPTION.value, 'message': msg}
         except Exception as e:
-            logger.exception('<insert_jointables_datas> error=')
+            logger.exception('<insert_jointables_datas> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
         return result
 
@@ -238,7 +238,7 @@ class CollectImportBase:
         except Exception as e:
             logger.exception('<convert_value> name=' + name +
                              ', type=' + data_type +
-                             ', value=' + str(value) + ', error=')
+                             ', value=' + str(value) + ', error: ')
             return None
         return None
 
@@ -281,7 +281,7 @@ class CollectImportBase:
         except Exception as e:
             logger.exception('<transform_value> name=' + name +
                              ', type=' + data_type +
-                             ', value=' + str(value) + ', error=')
+                             ', value=' + str(value) + ', error: ')
             return None
         return None
 

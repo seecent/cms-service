@@ -101,7 +101,7 @@ def execute_import(cid, user, client_ip, total, config):
         if task_id is not None:
             leadsMergeService.merge(task_id)
     except Exception as e:
-        logger.exception('<execute_import> error=')
+        logger.exception('<execute_import> error: ')
         result['code'] = ErrorCode.EXCEPTION.value
         result['message'] = str(e)
     return result
@@ -138,12 +138,12 @@ class XMLImport(object):
             result['uid'] = uid
             result['fileName'] = filename
         except FileNotFoundError as e:
-            logger.exception('<upload_file> error=')
+            logger.exception('<upload_file> error: ')
             create_upload_dir()
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         except Exception as e:
-            logger.exception('<upload_file> error=')
+            logger.exception('<upload_file> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result
@@ -183,7 +183,7 @@ class XMLImport(object):
                       'uid': uid, 'fileName': filename,
                       'total': total, 'titles': titles, 'list': datas}
         except Exception as e:
-            logger.exception('<upload_preview> error=')
+            logger.exception('<upload_preview> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result
@@ -264,11 +264,11 @@ class XMLImport(object):
             result = execute_import(cid, u, client_ip, total, config)
             result['collection_id'] = cid
         except ErrorCodeError as e:
-            logger.exception('<importXMLFile> error=')
+            logger.exception('<importXMLFile> error: ')
             result['code'] = e.code
             result['message'] = e.message
         except Exception as e:
-            logger.exception('<importXMLFile> error=')
+            logger.exception('<importXMLFile> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result
@@ -281,4 +281,4 @@ def create_upload_dir():
             logger.info('<create_upload_dir> upload_dir: ' + upload_dir)
             os.makedirs(upload_dir)
     except Exception as e:
-        logger.exception('<create_upload_dir> error=')
+        logger.exception('<create_upload_dir> error: ')

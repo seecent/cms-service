@@ -18,9 +18,9 @@ class FileType(enum.Enum):
 
 files = Table('cms_files', Base.metadata,
               Column('id', BigInteger, primary_key=True),
-              Column('uuid', String(50), nullable=False),
-              Column('name', String(50), nullable=False),
-              Column('original_filename', String(50)),
+              Column('uuid', String(256), nullable=False),
+              Column('name', String(256), nullable=False),
+              Column('original_filename', String(256)),
               Column('description', String(256)),
               Column('file_size', BigInteger),
               Column('file_path', String(512)),

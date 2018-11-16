@@ -113,7 +113,7 @@ def execute_import(cid, user, client_ip, total, config):
         if task_id is not None:
             _thread.start_new_thread(merge_leads, (cid, task_id))
     except Exception as e:
-        logger.exception('<execute_import> error=')
+        logger.exception('<execute_import> error: ')
         result['code'] = ErrorCode.EXCEPTION.value
         result['message'] = str(e)
 
@@ -152,12 +152,12 @@ class CsvImport(object):
             result['uid'] = uid
             result['fileName'] = filename
         except FileNotFoundError as e:
-            logger.exception('<upload_file> error=')
+            logger.exception('<upload_file> error: ')
             create_upload_dir()
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         except Exception as e:
-            logger.exception('<upload_file> error=')
+            logger.exception('<upload_file> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result
@@ -205,7 +205,7 @@ class CsvImport(object):
                       'uid': uid, 'fileName': filename,
                       'total': total, 'titles': titles, 'list': datas}
         except Exception as e:
-            logger.exception('<upload_preview> error=')
+            logger.exception('<upload_preview> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result
@@ -299,11 +299,11 @@ class CsvImport(object):
                 execute_import(cid, u, client_ip, total, config)
             result['collection_id'] = cid
         except ErrorCodeError as e:
-            logger.exception('<importCSVFile> error=')
+            logger.exception('<importCSVFile> error: ')
             result['code'] = e.code
             result['message'] = e.message
         except Exception as e:
-            logger.exception('<importCSVFile> error=')
+            logger.exception('<importCSVFile> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result
@@ -334,7 +334,7 @@ class CsvImport(object):
                 result['success_count'] = success_count
                 result['fail_count'] = fail_count
         except Exception as e:
-            logger.exception('<show_result> error=')
+            logger.exception('<show_result> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result
@@ -347,4 +347,4 @@ def create_upload_dir():
             logger.info('<create_upload_dir> upload_dir: ' + upload_dir)
             os.makedirs(upload_dir)
     except Exception as e:
-        logger.exception('<create_upload_dir> error=')
+        logger.exception('<create_upload_dir> error: ')

@@ -83,7 +83,7 @@ class LeadsMergeService:
                              ', error: transformtasks not found!')
             db.close()
         except Exception as e:
-            logger.exception('<merge> task_id: ' + str(task_id) + ', error=')
+            logger.exception('<merge> task_id: ' + str(task_id) + ', error: ')
 
     def _get_merge_keys_and_days(self, collection_type, template):
         merge_keys = ['mobile_phone']
@@ -98,7 +98,7 @@ class LeadsMergeService:
                     merge_keys = config['mergekeys']
                     merge_days = config.get('mergedays', 30)
         except Exception as e:
-            logger.exception('<_get_merge_keys_and_days> error=')
+            logger.exception('<_get_merge_keys_and_days> error: ')
         return (merge_keys, merge_days)
 
     def _get_collection(self, db, collection_id):
@@ -290,7 +290,7 @@ class LeadsMergeService:
 
             db.execute(text(sql), {'cid': collection_id})
         except Exception as e:
-            logger.exception('<_copy_rawleads_to_viableleads> error=')
+            logger.exception('<_copy_rawleads_to_viableleads> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result

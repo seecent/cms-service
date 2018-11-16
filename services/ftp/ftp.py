@@ -41,19 +41,19 @@ class FTPService(object):
                         ', port: ' + str(self.port))
             self.ftp.connect(self.host, self.port)
         except Exception as e:
-            logger.exception('<connect> error=')
+            logger.exception('<connect> error: ')
 
     def login(self):
         try:
             self.ftp.login(self.username, self.password)
         except Exception as e:
-            logger.exception('<login> error=')
+            logger.exception('<login> error: ')
 
     def quit(self):
         try:
             self.ftp.quit()
         except Exception as e:
-            logger.exception('<quit> error=')
+            logger.exception('<quit> error: ')
 
     def upload_file(self, remote_dir, path, file_name, local_file_name):
         logger.info('<upload_file> remote_dir: ' + remote_dir +
@@ -91,7 +91,7 @@ class FTPService(object):
                         ', result: ' + r)
             file_handler.close()
         except Exception as e:
-            logger.exception('<upload_file> error=')
+            logger.exception('<upload_file> error: ')
             return False
         return True
 
@@ -132,6 +132,6 @@ class FTPService(object):
 
             file_handler.close()
         except Exception as e:
-            logger.exception('<download_file> error=')
+            logger.exception('<download_file> error: ')
             result = False
         return result

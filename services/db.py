@@ -29,4 +29,4 @@ def bulk_insert_datas(db, table, data_list, batch=5000):
         else:
             db.bulk_insert(table, data_list)
     except Exception:
-        logger.exception('<bulk_insert_datas> error=')
+        logger.exception('<bulk_insert_datas> error: ')

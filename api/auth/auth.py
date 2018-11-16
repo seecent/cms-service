@@ -158,7 +158,7 @@ def logout_token(request, response, token):
             else:
                 logout_log(db.conn, None, client_ip, username)
         except Exception as e:
-            logger.exception('<logout> error=')
+            logger.exception('<logout> error: ')
             raise HTTPInternalServerError(title='logout_error')
 
 

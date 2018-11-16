@@ -103,7 +103,7 @@ class Leads(object):
             return {'total': total, 'offset': offset,
                     'limit': limit, 'leads': leads}
         except Exception as e:
-            logger.exception('<get_all_lead_list> error=')
+            logger.exception('<get_all_lead_list> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = "服务器内部异常！"
 

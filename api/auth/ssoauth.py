@@ -104,7 +104,7 @@ def auth_token(request, response, code):
             log.loginSSO(None, username, client_ip, OperResult.Fail, msg, db)
             raise ValidateTokenFailure('token_validation_failure')
     except Exception as e:
-        logger.exception('<auth_token> code: ' + code + ', error=')
+        logger.exception('<auth_token> code: ' + code + ', error: ')
         raise HTTPInternalServerError(title='login_error')
     return {'token': token, 'user': user_info(user), 'menus': user_menus}
 
@@ -135,7 +135,7 @@ def logout_token(request, response):
             logger.error('<logout_token> ip: ' + client_ip +
                          ', error: token is None!')
     except Exception as e:
-        logger.exception('<logout_token> error=')
+        logger.exception('<logout_token> error: ')
         raise HTTPInternalServerError(title='logout_error')
 
 
@@ -163,7 +163,7 @@ def current_info(request):
                 usermenus = user.get('menus', [])
             logger.info('<current_info> user: ' + str(userinfo))
         except Exception as e:
-            logger.exception('<current_info> token: ' + token + ', error=')
+            logger.exception('<current_info> token: ' + token + ', error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = ErrorCode.EXCEPTION.name
     else:
@@ -215,7 +215,7 @@ def get_current_user(token):
             result['message'] = ErrorCode.TOKEN_VALIDATION_FAILURE.name
             # raise ValidateTokenFailure('token_validation_failure')
     except Exception as e:
-        logger.exception('<get_current_user> token: ' + token + ', error=')
+        logger.exception('<get_current_user> token: ' + token + ', error: ')
         result['code'] = ErrorCode.EXCEPTION.value
         result['message'] = ErrorCode.EXCEPTION.name
     return result
@@ -256,7 +256,7 @@ def user_menus(request):
             result['code'] = ErrorCode.TOKEN_VALIDATION_FAILURE.value
             result['message'] = ErrorCode.TOKEN_VALIDATION_FAILURE.name
     except Exception as e:
-        logger.exception('<user_menus> error=')
+        logger.exception('<user_menus> error: ')
         result['code'] = ErrorCode.EXCEPTION.value
         result['message'] = ErrorCode.EXCEPTION.name
 

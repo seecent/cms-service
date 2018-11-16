@@ -7,7 +7,7 @@ from datetime import datetime
 from falcon import HTTPNotFound, HTTP_201, HTTP_204
 from log import logger
 from models.media.folder import folders
-from models import row2dict, rows2dict, bind_dict, change_dict
+from models import row2dict, rows2data, bind_dict, change_dict
 from services.media.folder import FolderService
 from sqlalchemy.sql import select
 
@@ -26,27 +26,44 @@ class FolderMixin(object):
 
 @hug.object.urls('')
 class Folders(object):
-    '''部门管理REST API
+    '''文件目录REST API
     '''
     @hug.object.get()
     def get(self, request, response, q: str=None):
-        '''部门
+        '''文件目录
         '''
         try:
-            t = folders.alias('d')
-            query = db.filter(folders, request)
-            if q:
-                query = query.where(t.c.name.like('%' + q + '%'))
+            parentId = request.params.get('parentId')
+            # filter_name = request.params.get('filterName')
+            t = folders.alias('f')
+            p = folders.alias('b')
+            joins = {'parent': {
+                     'select': ['id', 'parent_id', 'name'],
+                     'column': t.c.parent_id,
+                     'table': p,
+                     'join_column': p.c.id}}
+            query = db.filter_join(t, joins, request, ['Name'])
+            folder_list = []
+            if parentId is not None:
+                query = query.where(t.c.parent_id == parentId)
+            else:
+                query = query.where(t.c.level == 1)
+            if q is not None:
+                query = query.where(t.c.Name.like('%' + q + '%'))
             rs = db.paginate_data(query, request, response)
-            return rows2dict(rs, folders)
+            folder_list = rows2data(rs, folders, joins)
+            # for folder in folder_list:
+            #     if folder['Name'] == filter_name:
+            #         return [folder]
+            return folder_list
         except Exception as e:
             return {'code': 1, 'message': 'error'}
 
     @hug.object.post(status=HTTP_201)
     def post(self, body):
         '''
-        部门REST API Post接口
-        :param: id int 部门ID
+        文件目录REST API Post接口
+        :param: id int 文件目录ID
         :return: json
         '''
         folder = bind_dict(folders, body)
@@ -77,21 +94,24 @@ class FolderInst(FolderMixin, object):
     @hug.object.delete(status=HTTP_204)
     def delete(self, id: int):
         '''
-        删除部门
-        :param: id int 部门ID
+        删除文件目录
+        :param: id int 文件目录ID
         :return:
         '''
         db.delete(folders, id)
 
 
 @hug.get('/getAllFolders')
-def get_all_folders():
+def get_all_folders(request, response, parent_id=None):
     datas = []
-    t = folders.alias('d')
-    query = select([t.c.id, t.c.code, t.c.name])
+    t = folders.alias('f')
+    query = select([t.c.id, t.c.code, t.c.name, t.c.parent_id])
+    if parent_id:
+        query = query.where(t.c.parent_id == parent_id)
     rows = db.execute(query).fetchall()
     for r in rows:
-        datas.append({'id': r[0], 'code': r[1], 'name': r[2]})
+        datas.append({'id': r[0], 'code': r[1],
+                      'name': r[2], 'parent_id': r[3]})
     return datas
 
 
@@ -153,4 +173,4 @@ def init_folders():
         db.close()
         logger.info('<init_folders> end!')
     except Exception:
-        logger.exception('<init_folders> error=')
+        logger.exception('<init_folders> error: ')

@@ -6,4 +6,5 @@ psycopg2>=2.7.3
 hashids>=1.2.0
 Cython>=0.28.1
 pycryptodome>=3.6.1
+opencv-python>=3.4.3.18
 # pymssql>=2.1.3

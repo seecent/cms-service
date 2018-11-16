@@ -62,7 +62,7 @@ class SFTPService(object):
                 logger.info('<ssh> result: ' + str(err.decode()))
                 result = False
         except Exception as e:
-            logger.exception('<ssh> error=')
+            logger.exception('<ssh> error: ')
             result = False
         return result
 
@@ -76,7 +76,7 @@ class SFTPService(object):
             result = res if res else err
             logger.info('<cmd> result: ' + str(result.decode()))
         except Exception as e:
-            logger.exception('<cmd> error=')
+            logger.exception('<cmd> error: ')
 
     def connect(self):
         result = True
@@ -88,7 +88,7 @@ class SFTPService(object):
                                    password=self.password)
             self.sftp = paramiko.SFTPClient.from_transport(self.transport)
         except Exception as e:
-            logger.exception('<connect> error=')
+            logger.exception('<connect> error: ')
             result = False
         return result
 
@@ -97,7 +97,7 @@ class SFTPService(object):
             if self.transport is not None:
                 self.transport.close()
         except Exception as e:
-            logger.exception('<close> error=')
+            logger.exception('<close> error: ')
 
     def upload_file(self, remote_dir, path, file_name, local_file_name):
         logger.info('<upload_file> remote_dir: ' + remote_dir +
@@ -121,7 +121,7 @@ class SFTPService(object):
             logger.info('<upload_file> remote_file: ' + remote_file)
             sftp.put(local_file_name, remote_file)
         except Exception as e:
-            logger.exception('<upload_file> error=')
+            logger.exception('<upload_file> error: ')
             return False
         return True
 
@@ -130,7 +130,7 @@ class SFTPService(object):
         try:
             self.sftp.mkdir(dir_name)
         except Exception as e:
-            # logger.exception('<mk_dir> error=')
+            # logger.exception('<mk_dir> error: ')
             result = False
         return result
 
@@ -148,7 +148,7 @@ class SFTPService(object):
                         ', result: ' + str(result))
         except Exception as e:
             logger.exception('<is_dir_exist> dir_path: ' + dir_path +
-                             ', error=')
+                             ', error: ')
             result = False
         return result
 
@@ -172,7 +172,7 @@ class SFTPService(object):
                         save_filename)
             self.sftp.get(remote_file, save_filename)
         except Exception as e:
-            logger.exception('<download_file> error=')
+            logger.exception('<download_file> error: ')
             result = False
         return result
 
@@ -204,7 +204,7 @@ class SFTPService(object):
                             save_filename)
                 self.sftp.get(remote_file, save_filename)
         except Exception as e:
-            logger.exception('<download_files> error=')
+            logger.exception('<download_files> error: ')
         return file_names
 
     def _check_dir_exist(self, dir_list, dir_name):

@@ -62,7 +62,7 @@ class LeadsRichService:
                 self.rich_data(db, rawcontacts, d)
             db.close()
         except Exception as e:
-            logger.exception('<rich_raw_leads> cid: ' + str(cid) + ', error=')
+            logger.exception('<rich_raw_leads> cid: ' + str(cid) + ', error: ')
 
     def rich_viable_leads(self, cid):
         logger.info('<rich_viable_leads> cid: ' + str(cid))
@@ -105,7 +105,7 @@ class LeadsRichService:
             db.close()
         except Exception as e:
             logger.exception('<rich_viable_leads> cid: ' + str(cid) +
-                             ', error=')
+                             ', error: ')
 
     def rich_data(self, db, table, data):
         try:
@@ -119,7 +119,7 @@ class LeadsRichService:
                             ', data: ' + str(data))
                 db.update(table, data)
         except Exception as e:
-            logger.exception('<rich_data> error=')
+            logger.exception('<rich_data> error: ')
 
     # 判断是否为合法身份证号码
     def _check_idnumber(self, idnumber):
@@ -128,7 +128,7 @@ class LeadsRichService:
                 if len(idnumber) == 18:
                     return re.match(REGX, idnumber)
         except Exception as e:
-            logger.exception('<_check_idnumber> error=')
+            logger.exception('<_check_idnumber> error: ')
         return False
 
     def _rich_data_by_idnumber(self, data):
@@ -157,7 +157,7 @@ class LeadsRichService:
                     data['city_code'] = citycode
                     data['city_name'] = locationcache.get(citycode, city_name)
         except Exception as e:
-            logger.exception('<_rich_data_by_idnumber> error=')
+            logger.exception('<_rich_data_by_idnumber> error: ')
         return change
 
     # 判断是否为合法出生日期
@@ -173,7 +173,7 @@ class LeadsRichService:
                 if re.match(BD2_REGX, birth_date):
                     return birth_date.split('-')
         except Exception as e:
-            logger.exception('<_check_birth_date> error=')
+            logger.exception('<_check_birth_date> error: ')
         return None
 
     def _rich_data_birth(self, data):
@@ -205,5 +205,5 @@ class LeadsRichService:
                     data['birth_month'] = bds[1]
                     data['birth_day'] = bds[2]
         except Exception as e:
-            logger.exception('<_rich_data_birth> error=')
+            logger.exception('<_rich_data_birth> error: ')
         return change

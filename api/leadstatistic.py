@@ -28,7 +28,7 @@ def clean(collection_id, clean_time):
                 'last_modifed': datetime.now()}
         db.update(collections, data)
     except Exception as e:
-        logger.exception('<clean> error=')
+        logger.exception('<clean> error: ')
         result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
     return result
@@ -50,7 +50,7 @@ def merge(collection_id, merge_time):
         db.update(collections, data)
         copy_rawleads_to_viableleads(db, collection_id, merge_count)
     except Exception as e:
-        logger.exception('<merge> error=')
+        logger.exception('<merge> error: ')
         result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
     return result
@@ -108,7 +108,7 @@ def copy_rawleads_to_viableleads(db, collection_id, merge_count):
 
         db.execute(text(sql), {'cid': collection_id})
     except Exception as e:
-        logger.exception('<copy_rawleads_to_viableleads> error=')
+        logger.exception('<copy_rawleads_to_viableleads> error: ')
         result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
     return result

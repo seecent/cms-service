@@ -26,7 +26,7 @@ app.http.add_middleware(hug.middleware.CORSMiddleware(app, max_age='7'))
 #                                      '/api/scvimport/upload',
 #                                      '/api/xmlimport/upload']))
 app.http.base_url = '/api'
-# print(app)
+print(app)
 leadsrichservice = LeadsRichService()
 # lms db
 db.init_app(app, dataSources['cmsdb'])
@@ -174,8 +174,8 @@ def sync_wxusers():
 
 @hug.cli()
 def sync_wxmedias():
-    # wxmedia.sync_all_wxmedias()
-    wxmedia.sync_all_wxmeida_images()
+    wxmedia.sync_all_wxmedias()
+    # wxmedia.sync_all_wxmeida_images()
 
 
 @hug.cli()

@@ -86,7 +86,7 @@ def execute_import(cid, user_id, total, config):
             result['fail_count'] = r['fail_count']
         db.close()
     except Exception as e:
-        logger.exception('<execute_import> error=')
+        logger.exception('<execute_import> error: ')
         result['code'] = ErrorCode.EXCEPTION.value
         result['message'] = str(e)
     return result
@@ -207,11 +207,11 @@ class DBImport(object):
                 result = execute_import(cid, user_id, total, config)
             result['collection_id'] = cid
         except ErrorCodeError as e:
-            logger.exception('<importCsvFile> error=')
+            logger.exception('<importCsvFile> error: ')
             result['code'] = e.code
             result['message'] = e.message
         except Exception as e:
-            logger.exception('<importCsvFile> error=')
+            logger.exception('<importCsvFile> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result

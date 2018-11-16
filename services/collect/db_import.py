@@ -90,7 +90,7 @@ class CollectDBImportService(CollectImportBase):
                             ', collect_count=' + str(collect_count) +
                             ', fail_count=' + str(fail_count))
         except Exception as e:
-            logger.exception('<import_from_db> error=')
+            logger.exception('<import_from_db> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         end_time = datetime.now()
@@ -125,7 +125,7 @@ class CollectDBImportService(CollectImportBase):
             result['titles'] = column_names
             result['datas'] = datas
         except Exception as e:
-            logger.exception('<fetch_source_db_datas> error=')
+            logger.exception('<fetch_source_db_datas> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result
@@ -143,7 +143,7 @@ class CollectDBImportService(CollectImportBase):
             desc = cursor.description
             column_names = [col[0] for col in desc]
         except Exception as e:
-            logger.exception('<get_source_db_view_column_names> error=')
+            logger.exception('<get_source_db_view_column_names> error: ')
 
         return column_names
 
@@ -307,7 +307,7 @@ class CollectDBImportService(CollectImportBase):
         except Exception as e:
             logger.exception('<convert_value> name=' + name +
                              ', type=' + data_type +
-                             ', value=' + str(value) + ', error=')
+                             ', value=' + str(value) + ', error: ')
             return None
         return None
 

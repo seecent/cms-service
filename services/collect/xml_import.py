@@ -57,7 +57,7 @@ class CollectXMLImportService(CollectImportBase):
                 result = self._import_datas(cid, name, columns, components,
                                             jointables, datas, validate, merge)
         except Exception as e:
-            logger.exception('<import_from_xml_file> error=')
+            logger.exception('<import_from_xml_file> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         end_time = datetime.now()
@@ -92,7 +92,7 @@ class CollectXMLImportService(CollectImportBase):
                 result = self._import_datas(cid, name, columns, components,
                                             jointables, datas, validate, merge)
         except Exception as e:
-            logger.exception('<import_from_xml_file> error=')
+            logger.exception('<import_from_xml_file> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         end_time = datetime.now()
@@ -121,7 +121,7 @@ class CollectXMLImportService(CollectImportBase):
                                                offset, limit, columns,
                                                components, jointables)
         except Exception as e:
-            logger.exception('<preview_xml_file_datas> error=')
+            logger.exception('<preview_xml_file_datas> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result
@@ -141,7 +141,7 @@ class CollectXMLImportService(CollectImportBase):
                                                  components, jointables)
             result['titles'] = titles
         except Exception as e:
-            logger.exception('<get_xml_file_titles> error=')
+            logger.exception('<get_xml_file_titles> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result
@@ -232,7 +232,7 @@ class CollectXMLImportService(CollectImportBase):
             f.write(xml.decode('utf-8'))
             f.close()
         except Exception as e:
-            logger.exception('<create_template_xml_file> error=')
+            logger.exception('<create_template_xml_file> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result
@@ -293,7 +293,7 @@ class CollectXMLImportService(CollectImportBase):
             result['collect_count'] = collect_count
             result['fail_count'] = fail_count
         except Exception as e:
-            logger.exception('<_import_datas> error=')
+            logger.exception('<_import_datas> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result
@@ -590,7 +590,7 @@ class CollectXMLImportService(CollectImportBase):
             else:
                 err_msg = str(validate_errors)
         except Exception as e:
-            logger.exception('<_to_err_msg> error=')
+            logger.exception('<_to_err_msg> error: ')
         return err_msg
 
     def _validate_jointables_data(self, jointables, no, data):
@@ -677,7 +677,7 @@ class CollectXMLImportService(CollectImportBase):
             result['total'] = total
             result['list'] = datas
         except Exception as e:
-            logger.exception('<_parse_xml_file> error=')
+            logger.exception('<_parse_xml_file> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result
@@ -713,7 +713,7 @@ class CollectXMLImportService(CollectImportBase):
             result['total'] = total
             result['list'] = datas
         except Exception as e:
-            logger.exception('<_page_parse_xml_file> error=')
+            logger.exception('<_page_parse_xml_file> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result
@@ -741,7 +741,7 @@ class CollectXMLImportService(CollectImportBase):
             result['total'] = total
             result['list'] = datas
         except Exception as e:
-            logger.exception('<_parse_xml> error=')
+            logger.exception('<_parse_xml> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result
@@ -805,6 +805,6 @@ class CollectXMLImportService(CollectImportBase):
                     if c.tag == tag:
                         total = total + 1
         except Exception as e:
-            logger.exception('<count_xml_datas_total> error=')
+            logger.exception('<count_xml_datas_total> error: ')
 
         return total

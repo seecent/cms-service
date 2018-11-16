@@ -40,7 +40,7 @@ class CollectConfigService:
                     config['separator'] = self._parse_separator(c)
             result = self.validate_config(name, filename, config)
         except Exception as e:
-            logger.exception('<parse_config> error=')
+            logger.exception('<parse_config> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result

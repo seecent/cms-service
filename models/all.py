@@ -12,6 +12,9 @@ from models.joblog import joblogs
 from models.media.folder import folders
 from models.media.file import files
 from models.media.image import images
+from models.category.category import categories
+from models.page.page import pages, tags, pagetags
+from models.page.snippet import snippets
 # collection
 from models.collection import collections
 from models.template import templates

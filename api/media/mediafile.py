@@ -2,17 +2,22 @@
 from __future__ import absolute_import
 import hug
 
-from config import db
+from api.errorcode import ErrorCode
+from config import db, setting
 from datetime import datetime
 from falcon import HTTPNotFound, HTTP_201, HTTP_204
+from log import logger
 from models.media.file import files
 from models import row2dict, rows2dict, bind_dict, change_dict
+from services.media.file import FileService
 from sqlalchemy.sql import select
 
-IGNORES = {'created_date', 'last_modifed'}
+IGNORES = {'uuid', 'path', 'last_modifed'}
+fileservice = FileService()
 
 
 class FileMixin(object):
+
     def get_file(self, id):
         row = db.get(files, id)
         if row:
@@ -23,27 +28,37 @@ class FileMixin(object):
 
 @hug.object.urls('')
 class Files(object):
-    '''部门管理REST API
+    '''文件管理REST API
     '''
     @hug.object.get()
     def get(self, request, response, q: str=None):
-        '''部门
+        '''文件
         '''
         try:
-            t = files.alias('d')
-            query = db.filter(files, request)
+            folder_id = request.params.get('folderId')
+            t = files.alias('f')
+            query = db.filter(t, request)
+            if folder_id:
+                query = query.where(t.c.folder_id == folder_id)
             if q:
                 query = query.where(t.c.name.like('%' + q + '%'))
+            query = db.filter_by_date(t.c.created_date, query, request)
             rs = db.paginate_data(query, request, response)
-            return rows2dict(rs, files)
+            files_list = rows2dict(rs, files, IGNORES)
+            media_url = setting['media_url']
+            for f in files_list:
+                f['name'] = f.pop('original_filename')
+                f['url'] = media_url + f.pop('file_path')
+            return files_list
         except Exception as e:
-            return {'code': 1, 'message': 'error'}
+            logger.exception('<get> error: ')
+            return {'code': ErrorCode.EXCEPTION.value, 'message': 'error'}
 
     @hug.object.post(status=HTTP_201)
     def post(self, body):
         '''
-        部门REST API Post接口
-        :param: id int 部门ID
+        文件REST API Post接口
+        :param: id int 文件ID
         :return: json
         '''
         file = bind_dict(files, body)
@@ -56,9 +71,33 @@ class Files(object):
         db.bulk_delete(files, ids)
         return {'code': 0, 'message': 'OK'}
 
+    @hug.post('/upload')
+    def upload_file(body):
+        result = {'code': ErrorCode.OK.value,
+                  'message': ErrorCode.OK.name}
+        try:
+            folder_id = body['folder_id']
+            file_name = body['file_name']
+            file_content = body['file']
+            if folder_id:
+                folder_id = folder_id.decode(encoding="utf-8")
+                file_name = file_name.decode(encoding="utf-8")
+                result = fileservice.create(
+                    db, folder_id, file_name, file_content)
+                print(result)
+            else:
+                result['code'] = ErrorCode.MISS_PARAM.value
+                result['message'] = "miss param folder_id!"
+        except Exception as e:
+            logger.exception('<upload_file> error: ')
+            result['code'] = ErrorCode.EXCEPTION.value
+            result['message'] = str(e)
+        return result
+
 
 @hug.object.http_methods('/{id}')
 class FileInst(FileMixin, object):
+
     def get(self, id: int):
         t = self.get_file(id)
         return t
@@ -73,8 +112,8 @@ class FileInst(FileMixin, object):
     @hug.object.delete(status=HTTP_204)
     def delete(self, id: int):
         '''
-        删除部门
-        :param: id int 部门ID
+        删除文件
+        :param: id int 文件ID
         :return:
         '''
         db.delete(files, id)

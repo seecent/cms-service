@@ -66,7 +66,7 @@ def stat_sales_active_leads(db, salesno, stat_datetime):
             and_(saleleadsstats.c.saleno == salesno)))
         db.insert(saleleadsstats, stat_data)
     except Exception:
-        logger.exception('<stat_sales_active_leads> error=')
+        logger.exception('<stat_sales_active_leads> error: ')
 
     return stat_data
 
@@ -130,5 +130,5 @@ def init_saleleadsstats():
             bulk_insert_datas(db, saleleadsstats, stat_datas)
         db.close()
     except Exception:
-        logger.exception('<init_saleleadsstats> error=')
+        logger.exception('<init_saleleadsstats> error: ')
     logger.info('<init_saleleadsstats> end!')

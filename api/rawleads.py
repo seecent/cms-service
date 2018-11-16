@@ -238,12 +238,12 @@ class RawLeads(object):
             result['uid'] = uid
             result['fileName'] = filename
         except FileNotFoundError as e:
-            logger.exception('<upload_file> error=')
+            logger.exception('<upload_file> error: ')
             create_upload_dir()
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         except Exception as e:
-            logger.exception('<upload_file> error=')
+            logger.exception('<upload_file> error: ')
             result['code'] = ErrorCode.EXCEPTION.value
             result['message'] = str(e)
         return result
@@ -428,7 +428,7 @@ def create_upload_dir():
             logger.info('<create_upload_dir> upload_dir: ' + upload_dir)
             os.makedirs(upload_dir)
     except Exception as e:
-        logger.exception('<create_upload_dir> error=')
+        logger.exception('<create_upload_dir> error: ')
 
 
 def filter_by_user_org(co, cp, q, user, com_code):

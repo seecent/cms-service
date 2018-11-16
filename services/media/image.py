@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 import requests
+import cv2
 import os
 import uuid
 
@@ -35,7 +36,7 @@ class ImageService:
                               'full_path': full_path, 'url_path': url_path}
         except Exception:
             logger.exception('<find_folder> root: ' + root +
-                             ', path: ' + path + ', error=')
+                             ', path: ' + path + ', error: ')
             folder = None
         return folder
 
@@ -51,17 +52,27 @@ class ImageService:
             new_file_name = uid + os.path.splitext(file_name)[1]
             r = self.download(full_path, new_file_name, url)
             if r:
+                save_file_name = full_path + os.path.sep + new_file_name
+                file_size = os.path.getsize(save_file_name)
+                print(file_size)
+                img = cv2.imread(save_file_name)
+                sp = img.shape
+                print(sp)
+                print(sp[0])
+                print(sp[1])
+
                 file_path = "{0}/{1}".format(url_path, new_file_name)
                 data = {'uuid': uid,
                         'name': new_file_name,
                         'original_filename': file_name,
                         'type': FileType.IMAGE,
                         'file_path': file_path,
+                        # 'file_szie': 
                         'folder_id': folder_id,
                         'created_date': datetime.now()}
                 media_file = self.db.save(files, data)
         except Exception:
-            logger.exception('<save_image> error=')
+            logger.exception('<save_image> error: ')
             media_file = None
         return media_file
 
@@ -79,7 +90,7 @@ class ImageService:
             self.create_abs_folder(image_path)
         except Exception:
             logger.exception('<create_image_folder> root: ' + root +
-                             ', path: ' + path + ', error=')
+                             ', path: ' + path + ', error: ')
             image_path = False
         return image_path
 
@@ -90,7 +101,7 @@ class ImageService:
             url_path = "{0}/{1}/{2}".format(root, path, date)
         except Exception:
             logger.exception('<create_url_path> root: ' + root +
-                             ', path: ' + path + ', error=')
+                             ', path: ' + path + ', error: ')
         return url_path
 
     def create_image_url(self, file_path):
@@ -99,7 +110,7 @@ class ImageService:
             media_url = setting['media_url']
             image_url = "{0}/{1}".format(media_url, file_path)
         except Exception:
-            logger.exception('<create_url_path> error=')
+            logger.exception('<create_url_path> error: ')
         return image_url
 
     def create_abs_folder(self, name):
@@ -109,7 +120,7 @@ class ImageService:
             if not os.path.exists(name):
                 os.makedirs(name)
         except Exception:
-            logger.exception('<create_abs_folder> error=')
+            logger.exception('<create_abs_folder> error: ')
             result = False
         return result
 
@@ -117,7 +128,7 @@ class ImageService:
         try:
             return os.path.splitext(file_name)[1]
         except Exception:
-            logger.exception('<get_ext_name> error=')
+            logger.exception('<get_ext_name> error: ')
         return None
 
     def download(self, path, file_name, url):
@@ -130,6 +141,6 @@ class ImageService:
             with open(save_file_name, 'wb') as f:
                 f.write(r.content)
         except Exception:
-            logger.exception('<download> file_name: ' + file_name + ', error=')
+            logger.exception('<download> file_name: ' + file_name + ', error: ')
             result = False
         return result

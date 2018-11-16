@@ -124,7 +124,7 @@ def template_files(request, response):
             for file_name in files:
                 file_names.append(file_name)
     except Exception as e:
-        logger.exception('<template_files> error=')
+        logger.exception('<template_files> error: ')
 
     return file_names
 

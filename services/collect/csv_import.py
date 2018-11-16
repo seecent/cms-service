@@ -113,7 +113,7 @@ class CollectCSVImportService(CollectImportBase):
                             ', fail_count=' + str(fail_count))
                 self.progresscache.end(cid, source_count)
         except Exception as e:
-            logger.exception('<import_from_csv_file> error=')
+            logger.exception('<import_from_csv_file> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         end_time = datetime.now()
@@ -190,7 +190,7 @@ class CollectCSVImportService(CollectImportBase):
                 f.write(','.join(columns_names))
                 f.close()
         except Exception as e:
-            logger.exception('<create_template_csv_file> error=')
+            logger.exception('<create_template_csv_file> error: ')
             result = {'code': ErrorCode.EXCEPTION.value, 'message': str(e)}
 
         return result

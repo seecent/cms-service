@@ -9,10 +9,12 @@ from falcon import HTTPNotFound, HTTP_201, HTTP_204
 from log import logger
 from plugins.weixin.api.wxaccount import refresh_access_token
 from plugins.weixin.models.wxmedia import wxmedias
+from plugins.weixin.services.material import WxMediaService
 from models import row2dict, rows2dict, bind_dict, change_dict
 from services.media.image import ImageService
 from sqlalchemy.sql import select
 
+wxmediaservice = WxMediaService()
 IGNORES = {'created_date', 'last_modifed'}
 
 
@@ -121,9 +123,9 @@ def sync_all_wxmedias():
         db.connect()
         account = refresh_access_token(db, 1)
         if account is not None:
-            account['access_token'] = "15_gPB5NreeYnYsPQlnrPwfNOgPqsF250bHOTtq01V0Zf-6mDNtABn14rmJWKyeueir2oL_obyLHHzShb0mlDPq0uQ5r7vgODbCSnCbyGSOYnTX6Cz5_6UXvrEnJ68FQGbAIATEU"
+            account['access_token'] = "15_g9sGIxfuEyq9thyKzPTWMHizA0q74ZwDaL1LAYBuEAzzMFj5bt-6cEyTgbZzhu__O7FfCWSzViZQ2TcKZ7edwBi9l5t5KI-LrDaAXoAYru0QurOpZsMvGJmpBWzjRjhHsfjHoYjfzbNMrgn1YHQhAJARAJ"
             # media_ids_dict = query_all_mediaids_dict(db, None)
-            sync_wxmedias(db, account, {}, 'image', 0, 10)
+            wxmediaservice.sync_wxmedias(db, account, 'news', 0, 1)
         db.close()
     except Exception:
         logger.exception('<sync_all_wxusers> error: ')
@@ -165,10 +167,16 @@ def sync_wxmedias(db, account, media_ids_dict, media_type, offset, count):
                     str(res.status_code))
         logger.info('<sync_wxmedias> res json: ' +
                     str(res.json()))
+        # bs = str(res.json()).encode("ISO-8859-1")
+        # print(bs)
+        # logger.info('<sync_wxmedias> res json: ' +
+        #             bs.decode("utf-8"))
         data = res.json()
         if "item" in data:
             total = data['total_count']
             count = data['item_count']
+            title = data['title']
+            print(title.encode("ISO-8859-1").decode("utf-8"))
             logger.info('<sync_wxmedias> type: ' + media_type +
                         ", total: " + str(total) + ", count: " + str(count))
             items = data['item']
