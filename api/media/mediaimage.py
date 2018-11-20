@@ -7,15 +7,13 @@ from config import db, setting
 from datetime import datetime
 from falcon import HTTPNotFound, HTTP_201, HTTP_204
 from log import logger
-from models.media.file import files, FileType
+from models.media.file import files
 from models import row2dict, rows2dict, bind_dict, change_dict
 from services.media.file import FileService
-from services.media.image import ImageService
 from sqlalchemy.sql import select
 
 IGNORES = {'uuid', 'path', 'last_modifed'}
 fileservice = FileService()
-imageservice = ImageService()
 
 
 class FileMixin(object):
@@ -39,7 +37,7 @@ class Files(object):
         try:
             folder_id = request.params.get('folderId')
             t = files.alias('f')
-            query = db.filter(t, request, ['-created_date'])
+            query = db.filter(t, request)
             if folder_id:
                 query = query.where(t.c.folder_id == folder_id)
             if q:
@@ -84,18 +82,9 @@ class Files(object):
             if folder_id:
                 folder_id = folder_id.decode(encoding="utf-8")
                 file_name = file_name.decode(encoding="utf-8")
-                file_type = fileservice.check_file_type(file_name)
-                if file_type is not None:
-                    if file_type == FileType.IMAGE:
-                        result = imageservice.upload(
-                            db, folder_id, file_name, file_content)
-                    else:
-                        result = fileservice.upload(
-                            db, folder_id, file_name, file_content, file_type)
-                    print(result)
-                else:
-                    result['code'] = ErrorCode.UNSUPPORTED_FILE_TYPE.value
-                    result['message'] = ErrorCode.UNSUPPORTED_FILE_TYPE.name
+                result = fileservice.create(
+                    db, folder_id, file_name, file_content)
+                print(result)
             else:
                 result['code'] = ErrorCode.MISS_PARAM.value
                 result['message'] = "miss param folder_id!"

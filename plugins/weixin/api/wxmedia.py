@@ -136,15 +136,15 @@ def sync_all_wxmeida_images():
         db.connect()
         account = refresh_access_token(db, 1)
         if account is not None:
-            imageservice = ImageService(db)
-            folder = imageservice.find_folder('weixin', 'images')
+            imageservice = ImageService()
+            folder = imageservice.find_folder(db, 'weixin', 'images')
             if folder is not None:
                 t = wxmedias.alias('m')
                 query = select([t.c.id, t.c.name, t.c.url])
                 query.where(t.c.account_id == 1)
                 rows = db.execute(query).fetchall()
                 for r in rows:
-                    imageservice.save_image(folder, r[1], r[2])
+                    imageservice.save_image(db, folder, r[1], r[2])
         db.close()
     except Exception:
         logger.exception('<sync_all_wxmeida_images> error: ')

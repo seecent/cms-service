@@ -73,8 +73,9 @@ class FolderService:
         """
         result = True
         try:
-            logger.info('<create_abs_folder> name: ' + name)
+            logger.debug('<create_abs_folder> name: ' + name)
             if not os.path.exists(name):
+                logger.info('<create_abs_folder> name: ' + name)
                 os.makedirs(name)
         except Exception:
             logger.exception('<create_abs_folder> error: ')
@@ -86,8 +87,8 @@ class FolderService:
         根据目录ID从数据库获取文件目录信息。
         Parameters
         ----------
-        name : int
-          folder_id
+        folder_id : int
+          文件目录ID
 
         Returns
         -------
@@ -119,8 +120,8 @@ class FolderService:
         根据目录ID文件目录路径。
         Parameters
         ----------
-        name : int
-          folder_id
+        folder_id : int
+          文件目录ID
 
         Returns
         -------
@@ -129,7 +130,7 @@ class FolderService:
         """
         folder = None
         try:
-            logger.info('<get_folder_path> folder_id: ' + str(folder_id))
+            logger.debug('<get_folder_path> folder_id: ' + str(folder_id))
             if folder_id is not None:
                 t = folders.alias('f')
                 query = select([t.c.id, t.c.code, t.c.name,
@@ -144,7 +145,6 @@ class FolderService:
                               'parent_id': parent_id,
                               'level': row[4],
                               'path': row[1]}
-                    print(folder)
                     if parent_id is not None:
                         parent_folder = self.get_folder(db, parent_id)
                         if parent_folder is not None:

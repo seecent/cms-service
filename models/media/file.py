@@ -9,7 +9,7 @@ class FileType(enum.Enum):
     VIDEO = 2
     VOICE = 3
     TXT = 4
-    CSV = 4
+    CSV = 5
     EXCEL = 6
     WORD = 7
     PPT = 8
