@@ -3,17 +3,19 @@ from __future__ import absolute_import
 import hug
 import requests
 
+from api.errorcode import ErrorCode
 from config import db, setting
 from datetime import datetime
 from falcon import HTTPNotFound, HTTP_201, HTTP_204
 from log import logger
-from plugins.weixin.api.wxaccount import refresh_access_token
 from plugins.weixin.models.wxmedia import wxmedias
+from plugins.weixin.services.account import WxAccountService
 from plugins.weixin.services.material import WxMediaService
 from models import row2dict, rows2dict, bind_dict, change_dict
 from services.media.image import ImageService
 from sqlalchemy.sql import select
 
+wxaccountService = WxAccountService()
 wxmediaservice = WxMediaService()
 IGNORES = {'created_date', 'last_modifed'}
 
@@ -121,9 +123,9 @@ def query_all_mediaids_dict(db, media_type):
 def sync_all_wxmedias():
     try:
         db.connect()
-        account = refresh_access_token(db, 1)
-        if account is not None:
-            account['access_token'] = "15_g9sGIxfuEyq9thyKzPTWMHizA0q74ZwDaL1LAYBuEAzzMFj5bt-6cEyTgbZzhu__O7FfCWSzViZQ2TcKZ7edwBi9l5t5KI-LrDaAXoAYru0QurOpZsMvGJmpBWzjRjhHsfjHoYjfzbNMrgn1YHQhAJARAJ"
+        result = wxaccountService.refresh_access_token(db, 1)
+        if result['code'] == ErrorCode.OK.value:
+            account = result['account']
             # media_ids_dict = query_all_mediaids_dict(db, None)
             wxmediaservice.sync_wxmedias(db, account, 'news', 0, 1)
         db.close()
@@ -134,8 +136,9 @@ def sync_all_wxmedias():
 def sync_all_wxmeida_images():
     try:
         db.connect()
-        account = refresh_access_token(db, 1)
-        if account is not None:
+        result = wxaccountService.refresh_access_token(db, 1)
+        if result['code'] == ErrorCode.OK.value:
+            # account = result['account']
             imageservice = ImageService()
             folder = imageservice.find_folder(db, 'weixin', 'images')
             if folder is not None:

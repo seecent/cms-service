@@ -210,8 +210,6 @@ class UserInst(UserMixin, object):
                 stmt = preferences.delete().where(preferences.c.user_id == id)
                 db.execute(stmt)
                 db.execute(tokens.delete().where(tokens.c.user_id == id))
-                stmt = uausermaps.delete().where(uausermaps.c.user_id == id)
-                db.execute(stmt)
                 db.set_null_on_delete(collections, 'user_id', id)
                 db.set_null_on_delete(monitorcharts, 'user_id', id)
                 db.set_null_on_delete(operationlogs, 'user_id', id)
